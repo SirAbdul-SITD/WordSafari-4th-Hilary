@@ -1,0 +1,3481 @@
+{
+  "version": "1.0",
+  "words": 3150,
+  "categories": 21,
+  "levels": [
+    {
+      "cat": "Animals",
+      "level": 1,
+      "min_len": 3,
+      "max_len": 7,
+      "reward": 5
+    },
+    {
+      "cat": "Animals",
+      "level": 2,
+      "min_len": 4,
+      "max_len": 8,
+      "reward": 10
+    },
+    {
+      "cat": "Animals",
+      "level": 3,
+      "min_len": 5,
+      "max_len": 9,
+      "reward": 15
+    },
+    {
+      "cat": "Animals",
+      "level": 4,
+      "min_len": 6,
+      "max_len": 10,
+      "reward": 20
+    },
+    {
+      "cat": "Animals",
+      "level": 5,
+      "min_len": 7,
+      "max_len": 11,
+      "reward": 25
+    },
+    {
+      "cat": "Animals",
+      "level": 6,
+      "min_len": 8,
+      "max_len": 12,
+      "reward": 30
+    },
+    {
+      "cat": "Animals",
+      "level": 7,
+      "min_len": 9,
+      "max_len": 13,
+      "reward": 35
+    },
+    {
+      "cat": "Animals",
+      "level": 8,
+      "min_len": 10,
+      "max_len": 14,
+      "reward": 40
+    },
+    {
+      "cat": "Animals",
+      "level": 9,
+      "min_len": 11,
+      "max_len": 15,
+      "reward": 45
+    },
+    {
+      "cat": "Animals",
+      "level": 10,
+      "min_len": 12,
+      "max_len": 16,
+      "reward": 50
+    },
+    {
+      "cat": "Food",
+      "level": 1,
+      "min_len": 3,
+      "max_len": 7,
+      "reward": 5
+    },
+    {
+      "cat": "Food",
+      "level": 2,
+      "min_len": 4,
+      "max_len": 8,
+      "reward": 10
+    },
+    {
+      "cat": "Food",
+      "level": 3,
+      "min_len": 5,
+      "max_len": 9,
+      "reward": 15
+    },
+    {
+      "cat": "Food",
+      "level": 4,
+      "min_len": 6,
+      "max_len": 10,
+      "reward": 20
+    },
+    {
+      "cat": "Food",
+      "level": 5,
+      "min_len": 7,
+      "max_len": 11,
+      "reward": 25
+    },
+    {
+      "cat": "Food",
+      "level": 6,
+      "min_len": 8,
+      "max_len": 12,
+      "reward": 30
+    },
+    {
+      "cat": "Food",
+      "level": 7,
+      "min_len": 9,
+      "max_len": 13,
+      "reward": 35
+    },
+    {
+      "cat": "Food",
+      "level": 8,
+      "min_len": 10,
+      "max_len": 14,
+      "reward": 40
+    },
+    {
+      "cat": "Food",
+      "level": 9,
+      "min_len": 11,
+      "max_len": 15,
+      "reward": 45
+    },
+    {
+      "cat": "Food",
+      "level": 10,
+      "min_len": 12,
+      "max_len": 16,
+      "reward": 50
+    },
+    {
+      "cat": "Sports",
+      "level": 1,
+      "min_len": 3,
+      "max_len": 7,
+      "reward": 5
+    },
+    {
+      "cat": "Sports",
+      "level": 2,
+      "min_len": 4,
+      "max_len": 8,
+      "reward": 10
+    },
+    {
+      "cat": "Sports",
+      "level": 3,
+      "min_len": 5,
+      "max_len": 9,
+      "reward": 15
+    },
+    {
+      "cat": "Sports",
+      "level": 4,
+      "min_len": 6,
+      "max_len": 10,
+      "reward": 20
+    },
+    {
+      "cat": "Sports",
+      "level": 5,
+      "min_len": 7,
+      "max_len": 11,
+      "reward": 25
+    },
+    {
+      "cat": "Sports",
+      "level": 6,
+      "min_len": 8,
+      "max_len": 12,
+      "reward": 30
+    },
+    {
+      "cat": "Sports",
+      "level": 7,
+      "min_len": 9,
+      "max_len": 13,
+      "reward": 35
+    },
+    {
+      "cat": "Sports",
+      "level": 8,
+      "min_len": 10,
+      "max_len": 14,
+      "reward": 40
+    },
+    {
+      "cat": "Sports",
+      "level": 9,
+      "min_len": 11,
+      "max_len": 15,
+      "reward": 45
+    },
+    {
+      "cat": "Sports",
+      "level": 10,
+      "min_len": 12,
+      "max_len": 16,
+      "reward": 50
+    },
+    {
+      "cat": "Science",
+      "level": 1,
+      "min_len": 3,
+      "max_len": 7,
+      "reward": 5
+    },
+    {
+      "cat": "Science",
+      "level": 2,
+      "min_len": 4,
+      "max_len": 8,
+      "reward": 10
+    },
+    {
+      "cat": "Science",
+      "level": 3,
+      "min_len": 5,
+      "max_len": 9,
+      "reward": 15
+    },
+    {
+      "cat": "Science",
+      "level": 4,
+      "min_len": 6,
+      "max_len": 10,
+      "reward": 20
+    },
+    {
+      "cat": "Science",
+      "level": 5,
+      "min_len": 7,
+      "max_len": 11,
+      "reward": 25
+    },
+    {
+      "cat": "Science",
+      "level": 6,
+      "min_len": 8,
+      "max_len": 12,
+      "reward": 30
+    },
+    {
+      "cat": "Science",
+      "level": 7,
+      "min_len": 9,
+      "max_len": 13,
+      "reward": 35
+    },
+    {
+      "cat": "Science",
+      "level": 8,
+      "min_len": 10,
+      "max_len": 14,
+      "reward": 40
+    },
+    {
+      "cat": "Science",
+      "level": 9,
+      "min_len": 11,
+      "max_len": 15,
+      "reward": 45
+    },
+    {
+      "cat": "Science",
+      "level": 10,
+      "min_len": 12,
+      "max_len": 16,
+      "reward": 50
+    },
+    {
+      "cat": "Countries",
+      "level": 1,
+      "min_len": 3,
+      "max_len": 7,
+      "reward": 5
+    },
+    {
+      "cat": "Countries",
+      "level": 2,
+      "min_len": 4,
+      "max_len": 8,
+      "reward": 10
+    },
+    {
+      "cat": "Countries",
+      "level": 3,
+      "min_len": 5,
+      "max_len": 9,
+      "reward": 15
+    },
+    {
+      "cat": "Countries",
+      "level": 4,
+      "min_len": 6,
+      "max_len": 10,
+      "reward": 20
+    },
+    {
+      "cat": "Countries",
+      "level": 5,
+      "min_len": 7,
+      "max_len": 11,
+      "reward": 25
+    },
+    {
+      "cat": "Countries",
+      "level": 6,
+      "min_len": 8,
+      "max_len": 12,
+      "reward": 30
+    },
+    {
+      "cat": "Countries",
+      "level": 7,
+      "min_len": 9,
+      "max_len": 13,
+      "reward": 35
+    },
+    {
+      "cat": "Countries",
+      "level": 8,
+      "min_len": 10,
+      "max_len": 14,
+      "reward": 40
+    },
+    {
+      "cat": "Countries",
+      "level": 9,
+      "min_len": 11,
+      "max_len": 15,
+      "reward": 45
+    },
+    {
+      "cat": "Countries",
+      "level": 10,
+      "min_len": 12,
+      "max_len": 16,
+      "reward": 50
+    },
+    {
+      "cat": "Nature",
+      "level": 1,
+      "min_len": 3,
+      "max_len": 7,
+      "reward": 5
+    },
+    {
+      "cat": "Nature",
+      "level": 2,
+      "min_len": 4,
+      "max_len": 8,
+      "reward": 10
+    },
+    {
+      "cat": "Nature",
+      "level": 3,
+      "min_len": 5,
+      "max_len": 9,
+      "reward": 15
+    },
+    {
+      "cat": "Nature",
+      "level": 4,
+      "min_len": 6,
+      "max_len": 10,
+      "reward": 20
+    },
+    {
+      "cat": "Nature",
+      "level": 5,
+      "min_len": 7,
+      "max_len": 11,
+      "reward": 25
+    },
+    {
+      "cat": "Nature",
+      "level": 6,
+      "min_len": 8,
+      "max_len": 12,
+      "reward": 30
+    },
+    {
+      "cat": "Nature",
+      "level": 7,
+      "min_len": 9,
+      "max_len": 13,
+      "reward": 35
+    },
+    {
+      "cat": "Nature",
+      "level": 8,
+      "min_len": 10,
+      "max_len": 14,
+      "reward": 40
+    },
+    {
+      "cat": "Nature",
+      "level": 9,
+      "min_len": 11,
+      "max_len": 15,
+      "reward": 45
+    },
+    {
+      "cat": "Nature",
+      "level": 10,
+      "min_len": 12,
+      "max_len": 16,
+      "reward": 50
+    },
+    {
+      "cat": "Technology",
+      "level": 1,
+      "min_len": 3,
+      "max_len": 7,
+      "reward": 5
+    },
+    {
+      "cat": "Technology",
+      "level": 2,
+      "min_len": 4,
+      "max_len": 8,
+      "reward": 10
+    },
+    {
+      "cat": "Technology",
+      "level": 3,
+      "min_len": 5,
+      "max_len": 9,
+      "reward": 15
+    },
+    {
+      "cat": "Technology",
+      "level": 4,
+      "min_len": 6,
+      "max_len": 10,
+      "reward": 20
+    },
+    {
+      "cat": "Technology",
+      "level": 5,
+      "min_len": 7,
+      "max_len": 11,
+      "reward": 25
+    },
+    {
+      "cat": "Technology",
+      "level": 6,
+      "min_len": 8,
+      "max_len": 12,
+      "reward": 30
+    },
+    {
+      "cat": "Technology",
+      "level": 7,
+      "min_len": 9,
+      "max_len": 13,
+      "reward": 35
+    },
+    {
+      "cat": "Technology",
+      "level": 8,
+      "min_len": 10,
+      "max_len": 14,
+      "reward": 40
+    },
+    {
+      "cat": "Technology",
+      "level": 9,
+      "min_len": 11,
+      "max_len": 15,
+      "reward": 45
+    },
+    {
+      "cat": "Technology",
+      "level": 10,
+      "min_len": 12,
+      "max_len": 16,
+      "reward": 50
+    },
+    {
+      "cat": "Emotions",
+      "level": 1,
+      "min_len": 3,
+      "max_len": 7,
+      "reward": 5
+    },
+    {
+      "cat": "Emotions",
+      "level": 2,
+      "min_len": 4,
+      "max_len": 8,
+      "reward": 10
+    },
+    {
+      "cat": "Emotions",
+      "level": 3,
+      "min_len": 5,
+      "max_len": 9,
+      "reward": 15
+    },
+    {
+      "cat": "Emotions",
+      "level": 4,
+      "min_len": 6,
+      "max_len": 10,
+      "reward": 20
+    },
+    {
+      "cat": "Emotions",
+      "level": 5,
+      "min_len": 7,
+      "max_len": 11,
+      "reward": 25
+    },
+    {
+      "cat": "Emotions",
+      "level": 6,
+      "min_len": 8,
+      "max_len": 12,
+      "reward": 30
+    },
+    {
+      "cat": "Emotions",
+      "level": 7,
+      "min_len": 9,
+      "max_len": 13,
+      "reward": 35
+    },
+    {
+      "cat": "Emotions",
+      "level": 8,
+      "min_len": 10,
+      "max_len": 14,
+      "reward": 40
+    },
+    {
+      "cat": "Emotions",
+      "level": 9,
+      "min_len": 11,
+      "max_len": 15,
+      "reward": 45
+    },
+    {
+      "cat": "Emotions",
+      "level": 10,
+      "min_len": 12,
+      "max_len": 16,
+      "reward": 50
+    },
+    {
+      "cat": "Music",
+      "level": 1,
+      "min_len": 3,
+      "max_len": 7,
+      "reward": 5
+    },
+    {
+      "cat": "Music",
+      "level": 2,
+      "min_len": 4,
+      "max_len": 8,
+      "reward": 10
+    },
+    {
+      "cat": "Music",
+      "level": 3,
+      "min_len": 5,
+      "max_len": 9,
+      "reward": 15
+    },
+    {
+      "cat": "Music",
+      "level": 4,
+      "min_len": 6,
+      "max_len": 10,
+      "reward": 20
+    },
+    {
+      "cat": "Music",
+      "level": 5,
+      "min_len": 7,
+      "max_len": 11,
+      "reward": 25
+    },
+    {
+      "cat": "Music",
+      "level": 6,
+      "min_len": 8,
+      "max_len": 12,
+      "reward": 30
+    },
+    {
+      "cat": "Music",
+      "level": 7,
+      "min_len": 9,
+      "max_len": 13,
+      "reward": 35
+    },
+    {
+      "cat": "Music",
+      "level": 8,
+      "min_len": 10,
+      "max_len": 14,
+      "reward": 40
+    },
+    {
+      "cat": "Music",
+      "level": 9,
+      "min_len": 11,
+      "max_len": 15,
+      "reward": 45
+    },
+    {
+      "cat": "Music",
+      "level": 10,
+      "min_len": 12,
+      "max_len": 16,
+      "reward": 50
+    },
+    {
+      "cat": "Travel",
+      "level": 1,
+      "min_len": 3,
+      "max_len": 7,
+      "reward": 5
+    },
+    {
+      "cat": "Travel",
+      "level": 2,
+      "min_len": 4,
+      "max_len": 8,
+      "reward": 10
+    },
+    {
+      "cat": "Travel",
+      "level": 3,
+      "min_len": 5,
+      "max_len": 9,
+      "reward": 15
+    },
+    {
+      "cat": "Travel",
+      "level": 4,
+      "min_len": 6,
+      "max_len": 10,
+      "reward": 20
+    },
+    {
+      "cat": "Travel",
+      "level": 5,
+      "min_len": 7,
+      "max_len": 11,
+      "reward": 25
+    },
+    {
+      "cat": "Travel",
+      "level": 6,
+      "min_len": 8,
+      "max_len": 12,
+      "reward": 30
+    },
+    {
+      "cat": "Travel",
+      "level": 7,
+      "min_len": 9,
+      "max_len": 13,
+      "reward": 35
+    },
+    {
+      "cat": "Travel",
+      "level": 8,
+      "min_len": 10,
+      "max_len": 14,
+      "reward": 40
+    },
+    {
+      "cat": "Travel",
+      "level": 9,
+      "min_len": 11,
+      "max_len": 15,
+      "reward": 45
+    },
+    {
+      "cat": "Travel",
+      "level": 10,
+      "min_len": 12,
+      "max_len": 16,
+      "reward": 50
+    },
+    {
+      "cat": "Movies",
+      "level": 1,
+      "min_len": 3,
+      "max_len": 7,
+      "reward": 5
+    },
+    {
+      "cat": "Movies",
+      "level": 2,
+      "min_len": 4,
+      "max_len": 8,
+      "reward": 10
+    },
+    {
+      "cat": "Movies",
+      "level": 3,
+      "min_len": 5,
+      "max_len": 9,
+      "reward": 15
+    },
+    {
+      "cat": "Movies",
+      "level": 4,
+      "min_len": 6,
+      "max_len": 10,
+      "reward": 20
+    },
+    {
+      "cat": "Movies",
+      "level": 5,
+      "min_len": 7,
+      "max_len": 11,
+      "reward": 25
+    },
+    {
+      "cat": "Movies",
+      "level": 6,
+      "min_len": 8,
+      "max_len": 12,
+      "reward": 30
+    },
+    {
+      "cat": "Movies",
+      "level": 7,
+      "min_len": 9,
+      "max_len": 13,
+      "reward": 35
+    },
+    {
+      "cat": "Movies",
+      "level": 8,
+      "min_len": 10,
+      "max_len": 14,
+      "reward": 40
+    },
+    {
+      "cat": "Movies",
+      "level": 9,
+      "min_len": 11,
+      "max_len": 15,
+      "reward": 45
+    },
+    {
+      "cat": "Movies",
+      "level": 10,
+      "min_len": 12,
+      "max_len": 16,
+      "reward": 50
+    },
+    {
+      "cat": "Mythology",
+      "level": 1,
+      "min_len": 3,
+      "max_len": 7,
+      "reward": 5
+    },
+    {
+      "cat": "Mythology",
+      "level": 2,
+      "min_len": 4,
+      "max_len": 8,
+      "reward": 10
+    },
+    {
+      "cat": "Mythology",
+      "level": 3,
+      "min_len": 5,
+      "max_len": 9,
+      "reward": 15
+    },
+    {
+      "cat": "Mythology",
+      "level": 4,
+      "min_len": 6,
+      "max_len": 10,
+      "reward": 20
+    },
+    {
+      "cat": "Mythology",
+      "level": 5,
+      "min_len": 7,
+      "max_len": 11,
+      "reward": 25
+    },
+    {
+      "cat": "Mythology",
+      "level": 6,
+      "min_len": 8,
+      "max_len": 12,
+      "reward": 30
+    },
+    {
+      "cat": "Mythology",
+      "level": 7,
+      "min_len": 9,
+      "max_len": 13,
+      "reward": 35
+    },
+    {
+      "cat": "Mythology",
+      "level": 8,
+      "min_len": 10,
+      "max_len": 14,
+      "reward": 40
+    },
+    {
+      "cat": "Mythology",
+      "level": 9,
+      "min_len": 11,
+      "max_len": 15,
+      "reward": 45
+    },
+    {
+      "cat": "Mythology",
+      "level": 10,
+      "min_len": 12,
+      "max_len": 16,
+      "reward": 50
+    },
+    {
+      "cat": "Space",
+      "level": 1,
+      "min_len": 3,
+      "max_len": 7,
+      "reward": 5
+    },
+    {
+      "cat": "Space",
+      "level": 2,
+      "min_len": 4,
+      "max_len": 8,
+      "reward": 10
+    },
+    {
+      "cat": "Space",
+      "level": 3,
+      "min_len": 5,
+      "max_len": 9,
+      "reward": 15
+    },
+    {
+      "cat": "Space",
+      "level": 4,
+      "min_len": 6,
+      "max_len": 10,
+      "reward": 20
+    },
+    {
+      "cat": "Space",
+      "level": 5,
+      "min_len": 7,
+      "max_len": 11,
+      "reward": 25
+    },
+    {
+      "cat": "Space",
+      "level": 6,
+      "min_len": 8,
+      "max_len": 12,
+      "reward": 30
+    },
+    {
+      "cat": "Space",
+      "level": 7,
+      "min_len": 9,
+      "max_len": 13,
+      "reward": 35
+    },
+    {
+      "cat": "Space",
+      "level": 8,
+      "min_len": 10,
+      "max_len": 14,
+      "reward": 40
+    },
+    {
+      "cat": "Space",
+      "level": 9,
+      "min_len": 11,
+      "max_len": 15,
+      "reward": 45
+    },
+    {
+      "cat": "Space",
+      "level": 10,
+      "min_len": 12,
+      "max_len": 16,
+      "reward": 50
+    },
+    {
+      "cat": "History",
+      "level": 1,
+      "min_len": 3,
+      "max_len": 7,
+      "reward": 5
+    },
+    {
+      "cat": "History",
+      "level": 2,
+      "min_len": 4,
+      "max_len": 8,
+      "reward": 10
+    },
+    {
+      "cat": "History",
+      "level": 3,
+      "min_len": 5,
+      "max_len": 9,
+      "reward": 15
+    },
+    {
+      "cat": "History",
+      "level": 4,
+      "min_len": 6,
+      "max_len": 10,
+      "reward": 20
+    },
+    {
+      "cat": "History",
+      "level": 5,
+      "min_len": 7,
+      "max_len": 11,
+      "reward": 25
+    },
+    {
+      "cat": "History",
+      "level": 6,
+      "min_len": 8,
+      "max_len": 12,
+      "reward": 30
+    },
+    {
+      "cat": "History",
+      "level": 7,
+      "min_len": 9,
+      "max_len": 13,
+      "reward": 35
+    },
+    {
+      "cat": "History",
+      "level": 8,
+      "min_len": 10,
+      "max_len": 14,
+      "reward": 40
+    },
+    {
+      "cat": "History",
+      "level": 9,
+      "min_len": 11,
+      "max_len": 15,
+      "reward": 45
+    },
+    {
+      "cat": "History",
+      "level": 10,
+      "min_len": 12,
+      "max_len": 16,
+      "reward": 50
+    },
+    {
+      "cat": "Cooking",
+      "level": 1,
+      "min_len": 3,
+      "max_len": 7,
+      "reward": 5
+    },
+    {
+      "cat": "Cooking",
+      "level": 2,
+      "min_len": 4,
+      "max_len": 8,
+      "reward": 10
+    },
+    {
+      "cat": "Cooking",
+      "level": 3,
+      "min_len": 5,
+      "max_len": 9,
+      "reward": 15
+    },
+    {
+      "cat": "Cooking",
+      "level": 4,
+      "min_len": 6,
+      "max_len": 10,
+      "reward": 20
+    },
+    {
+      "cat": "Cooking",
+      "level": 5,
+      "min_len": 7,
+      "max_len": 11,
+      "reward": 25
+    },
+    {
+      "cat": "Cooking",
+      "level": 6,
+      "min_len": 8,
+      "max_len": 12,
+      "reward": 30
+    },
+    {
+      "cat": "Cooking",
+      "level": 7,
+      "min_len": 9,
+      "max_len": 13,
+      "reward": 35
+    },
+    {
+      "cat": "Cooking",
+      "level": 8,
+      "min_len": 10,
+      "max_len": 14,
+      "reward": 40
+    },
+    {
+      "cat": "Cooking",
+      "level": 9,
+      "min_len": 11,
+      "max_len": 15,
+      "reward": 45
+    },
+    {
+      "cat": "Cooking",
+      "level": 10,
+      "min_len": 12,
+      "max_len": 16,
+      "reward": 50
+    },
+    {
+      "cat": "Fashion",
+      "level": 1,
+      "min_len": 3,
+      "max_len": 7,
+      "reward": 5
+    },
+    {
+      "cat": "Fashion",
+      "level": 2,
+      "min_len": 4,
+      "max_len": 8,
+      "reward": 10
+    },
+    {
+      "cat": "Fashion",
+      "level": 3,
+      "min_len": 5,
+      "max_len": 9,
+      "reward": 15
+    },
+    {
+      "cat": "Fashion",
+      "level": 4,
+      "min_len": 6,
+      "max_len": 10,
+      "reward": 20
+    },
+    {
+      "cat": "Fashion",
+      "level": 5,
+      "min_len": 7,
+      "max_len": 11,
+      "reward": 25
+    },
+    {
+      "cat": "Fashion",
+      "level": 6,
+      "min_len": 8,
+      "max_len": 12,
+      "reward": 30
+    },
+    {
+      "cat": "Fashion",
+      "level": 7,
+      "min_len": 9,
+      "max_len": 13,
+      "reward": 35
+    },
+    {
+      "cat": "Fashion",
+      "level": 8,
+      "min_len": 10,
+      "max_len": 14,
+      "reward": 40
+    },
+    {
+      "cat": "Fashion",
+      "level": 9,
+      "min_len": 11,
+      "max_len": 15,
+      "reward": 45
+    },
+    {
+      "cat": "Fashion",
+      "level": 10,
+      "min_len": 12,
+      "max_len": 16,
+      "reward": 50
+    },
+    {
+      "cat": "Art",
+      "level": 1,
+      "min_len": 3,
+      "max_len": 7,
+      "reward": 5
+    },
+    {
+      "cat": "Art",
+      "level": 2,
+      "min_len": 4,
+      "max_len": 8,
+      "reward": 10
+    },
+    {
+      "cat": "Art",
+      "level": 3,
+      "min_len": 5,
+      "max_len": 9,
+      "reward": 15
+    },
+    {
+      "cat": "Art",
+      "level": 4,
+      "min_len": 6,
+      "max_len": 10,
+      "reward": 20
+    },
+    {
+      "cat": "Art",
+      "level": 5,
+      "min_len": 7,
+      "max_len": 11,
+      "reward": 25
+    },
+    {
+      "cat": "Art",
+      "level": 6,
+      "min_len": 8,
+      "max_len": 12,
+      "reward": 30
+    },
+    {
+      "cat": "Art",
+      "level": 7,
+      "min_len": 9,
+      "max_len": 13,
+      "reward": 35
+    },
+    {
+      "cat": "Art",
+      "level": 8,
+      "min_len": 10,
+      "max_len": 14,
+      "reward": 40
+    },
+    {
+      "cat": "Art",
+      "level": 9,
+      "min_len": 11,
+      "max_len": 15,
+      "reward": 45
+    },
+    {
+      "cat": "Art",
+      "level": 10,
+      "min_len": 12,
+      "max_len": 16,
+      "reward": 50
+    },
+    {
+      "cat": "Body",
+      "level": 1,
+      "min_len": 3,
+      "max_len": 7,
+      "reward": 5
+    },
+    {
+      "cat": "Body",
+      "level": 2,
+      "min_len": 4,
+      "max_len": 8,
+      "reward": 10
+    },
+    {
+      "cat": "Body",
+      "level": 3,
+      "min_len": 5,
+      "max_len": 9,
+      "reward": 15
+    },
+    {
+      "cat": "Body",
+      "level": 4,
+      "min_len": 6,
+      "max_len": 10,
+      "reward": 20
+    },
+    {
+      "cat": "Body",
+      "level": 5,
+      "min_len": 7,
+      "max_len": 11,
+      "reward": 25
+    },
+    {
+      "cat": "Body",
+      "level": 6,
+      "min_len": 8,
+      "max_len": 12,
+      "reward": 30
+    },
+    {
+      "cat": "Body",
+      "level": 7,
+      "min_len": 9,
+      "max_len": 13,
+      "reward": 35
+    },
+    {
+      "cat": "Body",
+      "level": 8,
+      "min_len": 10,
+      "max_len": 14,
+      "reward": 40
+    },
+    {
+      "cat": "Body",
+      "level": 9,
+      "min_len": 11,
+      "max_len": 15,
+      "reward": 45
+    },
+    {
+      "cat": "Body",
+      "level": 10,
+      "min_len": 12,
+      "max_len": 16,
+      "reward": 50
+    },
+    {
+      "cat": "Weather",
+      "level": 1,
+      "min_len": 3,
+      "max_len": 7,
+      "reward": 5
+    },
+    {
+      "cat": "Weather",
+      "level": 2,
+      "min_len": 4,
+      "max_len": 8,
+      "reward": 10
+    },
+    {
+      "cat": "Weather",
+      "level": 3,
+      "min_len": 5,
+      "max_len": 9,
+      "reward": 15
+    },
+    {
+      "cat": "Weather",
+      "level": 4,
+      "min_len": 6,
+      "max_len": 10,
+      "reward": 20
+    },
+    {
+      "cat": "Weather",
+      "level": 5,
+      "min_len": 7,
+      "max_len": 11,
+      "reward": 25
+    },
+    {
+      "cat": "Weather",
+      "level": 6,
+      "min_len": 8,
+      "max_len": 12,
+      "reward": 30
+    },
+    {
+      "cat": "Weather",
+      "level": 7,
+      "min_len": 9,
+      "max_len": 13,
+      "reward": 35
+    },
+    {
+      "cat": "Weather",
+      "level": 8,
+      "min_len": 10,
+      "max_len": 14,
+      "reward": 40
+    },
+    {
+      "cat": "Weather",
+      "level": 9,
+      "min_len": 11,
+      "max_len": 15,
+      "reward": 45
+    },
+    {
+      "cat": "Weather",
+      "level": 10,
+      "min_len": 12,
+      "max_len": 16,
+      "reward": 50
+    },
+    {
+      "cat": "Sports Equipment",
+      "level": 1,
+      "min_len": 3,
+      "max_len": 7,
+      "reward": 5
+    },
+    {
+      "cat": "Sports Equipment",
+      "level": 2,
+      "min_len": 4,
+      "max_len": 8,
+      "reward": 10
+    },
+    {
+      "cat": "Sports Equipment",
+      "level": 3,
+      "min_len": 5,
+      "max_len": 9,
+      "reward": 15
+    },
+    {
+      "cat": "Sports Equipment",
+      "level": 4,
+      "min_len": 6,
+      "max_len": 10,
+      "reward": 20
+    },
+    {
+      "cat": "Sports Equipment",
+      "level": 5,
+      "min_len": 7,
+      "max_len": 11,
+      "reward": 25
+    },
+    {
+      "cat": "Sports Equipment",
+      "level": 6,
+      "min_len": 8,
+      "max_len": 12,
+      "reward": 30
+    },
+    {
+      "cat": "Sports Equipment",
+      "level": 7,
+      "min_len": 9,
+      "max_len": 13,
+      "reward": 35
+    },
+    {
+      "cat": "Sports Equipment",
+      "level": 8,
+      "min_len": 10,
+      "max_len": 14,
+      "reward": 40
+    },
+    {
+      "cat": "Sports Equipment",
+      "level": 9,
+      "min_len": 11,
+      "max_len": 15,
+      "reward": 45
+    },
+    {
+      "cat": "Sports Equipment",
+      "level": 10,
+      "min_len": 12,
+      "max_len": 16,
+      "reward": 50
+    },
+    {
+      "cat": "Professions",
+      "level": 1,
+      "min_len": 3,
+      "max_len": 7,
+      "reward": 5
+    },
+    {
+      "cat": "Professions",
+      "level": 2,
+      "min_len": 4,
+      "max_len": 8,
+      "reward": 10
+    },
+    {
+      "cat": "Professions",
+      "level": 3,
+      "min_len": 5,
+      "max_len": 9,
+      "reward": 15
+    },
+    {
+      "cat": "Professions",
+      "level": 4,
+      "min_len": 6,
+      "max_len": 10,
+      "reward": 20
+    },
+    {
+      "cat": "Professions",
+      "level": 5,
+      "min_len": 7,
+      "max_len": 11,
+      "reward": 25
+    },
+    {
+      "cat": "Professions",
+      "level": 6,
+      "min_len": 8,
+      "max_len": 12,
+      "reward": 30
+    },
+    {
+      "cat": "Professions",
+      "level": 7,
+      "min_len": 9,
+      "max_len": 13,
+      "reward": 35
+    },
+    {
+      "cat": "Professions",
+      "level": 8,
+      "min_len": 10,
+      "max_len": 14,
+      "reward": 40
+    },
+    {
+      "cat": "Professions",
+      "level": 9,
+      "min_len": 11,
+      "max_len": 15,
+      "reward": 45
+    },
+    {
+      "cat": "Professions",
+      "level": 10,
+      "min_len": 12,
+      "max_len": 16,
+      "reward": 50
+    }
+  ],
+  "achievements": [
+    {
+      "id": "ach_001",
+      "title": "Achievement 1",
+      "points": 25,
+      "desc": "Solve 10 words to unlock this achievement"
+    },
+    {
+      "id": "ach_002",
+      "title": "Achievement 2",
+      "points": 50,
+      "desc": "Solve 20 words to unlock this achievement"
+    },
+    {
+      "id": "ach_003",
+      "title": "Achievement 3",
+      "points": 75,
+      "desc": "Solve 30 words to unlock this achievement"
+    },
+    {
+      "id": "ach_004",
+      "title": "Achievement 4",
+      "points": 100,
+      "desc": "Solve 40 words to unlock this achievement"
+    },
+    {
+      "id": "ach_005",
+      "title": "Achievement 5",
+      "points": 125,
+      "desc": "Solve 50 words to unlock this achievement"
+    },
+    {
+      "id": "ach_006",
+      "title": "Achievement 6",
+      "points": 150,
+      "desc": "Solve 60 words to unlock this achievement"
+    },
+    {
+      "id": "ach_007",
+      "title": "Achievement 7",
+      "points": 175,
+      "desc": "Solve 70 words to unlock this achievement"
+    },
+    {
+      "id": "ach_008",
+      "title": "Achievement 8",
+      "points": 200,
+      "desc": "Solve 80 words to unlock this achievement"
+    },
+    {
+      "id": "ach_009",
+      "title": "Achievement 9",
+      "points": 225,
+      "desc": "Solve 90 words to unlock this achievement"
+    },
+    {
+      "id": "ach_010",
+      "title": "Achievement 10",
+      "points": 250,
+      "desc": "Solve 100 words to unlock this achievement"
+    },
+    {
+      "id": "ach_011",
+      "title": "Achievement 11",
+      "points": 275,
+      "desc": "Solve 110 words to unlock this achievement"
+    },
+    {
+      "id": "ach_012",
+      "title": "Achievement 12",
+      "points": 300,
+      "desc": "Solve 120 words to unlock this achievement"
+    },
+    {
+      "id": "ach_013",
+      "title": "Achievement 13",
+      "points": 325,
+      "desc": "Solve 130 words to unlock this achievement"
+    },
+    {
+      "id": "ach_014",
+      "title": "Achievement 14",
+      "points": 350,
+      "desc": "Solve 140 words to unlock this achievement"
+    },
+    {
+      "id": "ach_015",
+      "title": "Achievement 15",
+      "points": 375,
+      "desc": "Solve 150 words to unlock this achievement"
+    },
+    {
+      "id": "ach_016",
+      "title": "Achievement 16",
+      "points": 400,
+      "desc": "Solve 160 words to unlock this achievement"
+    },
+    {
+      "id": "ach_017",
+      "title": "Achievement 17",
+      "points": 425,
+      "desc": "Solve 170 words to unlock this achievement"
+    },
+    {
+      "id": "ach_018",
+      "title": "Achievement 18",
+      "points": 450,
+      "desc": "Solve 180 words to unlock this achievement"
+    },
+    {
+      "id": "ach_019",
+      "title": "Achievement 19",
+      "points": 475,
+      "desc": "Solve 190 words to unlock this achievement"
+    },
+    {
+      "id": "ach_020",
+      "title": "Achievement 20",
+      "points": 500,
+      "desc": "Solve 200 words to unlock this achievement"
+    },
+    {
+      "id": "ach_021",
+      "title": "Achievement 21",
+      "points": 525,
+      "desc": "Solve 210 words to unlock this achievement"
+    },
+    {
+      "id": "ach_022",
+      "title": "Achievement 22",
+      "points": 550,
+      "desc": "Solve 220 words to unlock this achievement"
+    },
+    {
+      "id": "ach_023",
+      "title": "Achievement 23",
+      "points": 575,
+      "desc": "Solve 230 words to unlock this achievement"
+    },
+    {
+      "id": "ach_024",
+      "title": "Achievement 24",
+      "points": 600,
+      "desc": "Solve 240 words to unlock this achievement"
+    },
+    {
+      "id": "ach_025",
+      "title": "Achievement 25",
+      "points": 625,
+      "desc": "Solve 250 words to unlock this achievement"
+    },
+    {
+      "id": "ach_026",
+      "title": "Achievement 26",
+      "points": 650,
+      "desc": "Solve 260 words to unlock this achievement"
+    },
+    {
+      "id": "ach_027",
+      "title": "Achievement 27",
+      "points": 675,
+      "desc": "Solve 270 words to unlock this achievement"
+    },
+    {
+      "id": "ach_028",
+      "title": "Achievement 28",
+      "points": 700,
+      "desc": "Solve 280 words to unlock this achievement"
+    },
+    {
+      "id": "ach_029",
+      "title": "Achievement 29",
+      "points": 725,
+      "desc": "Solve 290 words to unlock this achievement"
+    },
+    {
+      "id": "ach_030",
+      "title": "Achievement 30",
+      "points": 750,
+      "desc": "Solve 300 words to unlock this achievement"
+    },
+    {
+      "id": "ach_031",
+      "title": "Achievement 31",
+      "points": 775,
+      "desc": "Solve 310 words to unlock this achievement"
+    },
+    {
+      "id": "ach_032",
+      "title": "Achievement 32",
+      "points": 800,
+      "desc": "Solve 320 words to unlock this achievement"
+    },
+    {
+      "id": "ach_033",
+      "title": "Achievement 33",
+      "points": 825,
+      "desc": "Solve 330 words to unlock this achievement"
+    },
+    {
+      "id": "ach_034",
+      "title": "Achievement 34",
+      "points": 850,
+      "desc": "Solve 340 words to unlock this achievement"
+    },
+    {
+      "id": "ach_035",
+      "title": "Achievement 35",
+      "points": 875,
+      "desc": "Solve 350 words to unlock this achievement"
+    },
+    {
+      "id": "ach_036",
+      "title": "Achievement 36",
+      "points": 900,
+      "desc": "Solve 360 words to unlock this achievement"
+    },
+    {
+      "id": "ach_037",
+      "title": "Achievement 37",
+      "points": 925,
+      "desc": "Solve 370 words to unlock this achievement"
+    },
+    {
+      "id": "ach_038",
+      "title": "Achievement 38",
+      "points": 950,
+      "desc": "Solve 380 words to unlock this achievement"
+    },
+    {
+      "id": "ach_039",
+      "title": "Achievement 39",
+      "points": 975,
+      "desc": "Solve 390 words to unlock this achievement"
+    },
+    {
+      "id": "ach_040",
+      "title": "Achievement 40",
+      "points": 1000,
+      "desc": "Solve 400 words to unlock this achievement"
+    },
+    {
+      "id": "ach_041",
+      "title": "Achievement 41",
+      "points": 1025,
+      "desc": "Solve 410 words to unlock this achievement"
+    },
+    {
+      "id": "ach_042",
+      "title": "Achievement 42",
+      "points": 1050,
+      "desc": "Solve 420 words to unlock this achievement"
+    },
+    {
+      "id": "ach_043",
+      "title": "Achievement 43",
+      "points": 1075,
+      "desc": "Solve 430 words to unlock this achievement"
+    },
+    {
+      "id": "ach_044",
+      "title": "Achievement 44",
+      "points": 1100,
+      "desc": "Solve 440 words to unlock this achievement"
+    },
+    {
+      "id": "ach_045",
+      "title": "Achievement 45",
+      "points": 1125,
+      "desc": "Solve 450 words to unlock this achievement"
+    },
+    {
+      "id": "ach_046",
+      "title": "Achievement 46",
+      "points": 1150,
+      "desc": "Solve 460 words to unlock this achievement"
+    },
+    {
+      "id": "ach_047",
+      "title": "Achievement 47",
+      "points": 1175,
+      "desc": "Solve 470 words to unlock this achievement"
+    },
+    {
+      "id": "ach_048",
+      "title": "Achievement 48",
+      "points": 1200,
+      "desc": "Solve 480 words to unlock this achievement"
+    },
+    {
+      "id": "ach_049",
+      "title": "Achievement 49",
+      "points": 1225,
+      "desc": "Solve 490 words to unlock this achievement"
+    },
+    {
+      "id": "ach_050",
+      "title": "Achievement 50",
+      "points": 1250,
+      "desc": "Solve 500 words to unlock this achievement"
+    },
+    {
+      "id": "ach_051",
+      "title": "Achievement 51",
+      "points": 1275,
+      "desc": "Solve 510 words to unlock this achievement"
+    },
+    {
+      "id": "ach_052",
+      "title": "Achievement 52",
+      "points": 1300,
+      "desc": "Solve 520 words to unlock this achievement"
+    },
+    {
+      "id": "ach_053",
+      "title": "Achievement 53",
+      "points": 1325,
+      "desc": "Solve 530 words to unlock this achievement"
+    },
+    {
+      "id": "ach_054",
+      "title": "Achievement 54",
+      "points": 1350,
+      "desc": "Solve 540 words to unlock this achievement"
+    },
+    {
+      "id": "ach_055",
+      "title": "Achievement 55",
+      "points": 1375,
+      "desc": "Solve 550 words to unlock this achievement"
+    },
+    {
+      "id": "ach_056",
+      "title": "Achievement 56",
+      "points": 1400,
+      "desc": "Solve 560 words to unlock this achievement"
+    },
+    {
+      "id": "ach_057",
+      "title": "Achievement 57",
+      "points": 1425,
+      "desc": "Solve 570 words to unlock this achievement"
+    },
+    {
+      "id": "ach_058",
+      "title": "Achievement 58",
+      "points": 1450,
+      "desc": "Solve 580 words to unlock this achievement"
+    },
+    {
+      "id": "ach_059",
+      "title": "Achievement 59",
+      "points": 1475,
+      "desc": "Solve 590 words to unlock this achievement"
+    },
+    {
+      "id": "ach_060",
+      "title": "Achievement 60",
+      "points": 1500,
+      "desc": "Solve 600 words to unlock this achievement"
+    },
+    {
+      "id": "ach_061",
+      "title": "Achievement 61",
+      "points": 1525,
+      "desc": "Solve 610 words to unlock this achievement"
+    },
+    {
+      "id": "ach_062",
+      "title": "Achievement 62",
+      "points": 1550,
+      "desc": "Solve 620 words to unlock this achievement"
+    },
+    {
+      "id": "ach_063",
+      "title": "Achievement 63",
+      "points": 1575,
+      "desc": "Solve 630 words to unlock this achievement"
+    },
+    {
+      "id": "ach_064",
+      "title": "Achievement 64",
+      "points": 1600,
+      "desc": "Solve 640 words to unlock this achievement"
+    },
+    {
+      "id": "ach_065",
+      "title": "Achievement 65",
+      "points": 1625,
+      "desc": "Solve 650 words to unlock this achievement"
+    },
+    {
+      "id": "ach_066",
+      "title": "Achievement 66",
+      "points": 1650,
+      "desc": "Solve 660 words to unlock this achievement"
+    },
+    {
+      "id": "ach_067",
+      "title": "Achievement 67",
+      "points": 1675,
+      "desc": "Solve 670 words to unlock this achievement"
+    },
+    {
+      "id": "ach_068",
+      "title": "Achievement 68",
+      "points": 1700,
+      "desc": "Solve 680 words to unlock this achievement"
+    },
+    {
+      "id": "ach_069",
+      "title": "Achievement 69",
+      "points": 1725,
+      "desc": "Solve 690 words to unlock this achievement"
+    },
+    {
+      "id": "ach_070",
+      "title": "Achievement 70",
+      "points": 1750,
+      "desc": "Solve 700 words to unlock this achievement"
+    },
+    {
+      "id": "ach_071",
+      "title": "Achievement 71",
+      "points": 1775,
+      "desc": "Solve 710 words to unlock this achievement"
+    },
+    {
+      "id": "ach_072",
+      "title": "Achievement 72",
+      "points": 1800,
+      "desc": "Solve 720 words to unlock this achievement"
+    },
+    {
+      "id": "ach_073",
+      "title": "Achievement 73",
+      "points": 1825,
+      "desc": "Solve 730 words to unlock this achievement"
+    },
+    {
+      "id": "ach_074",
+      "title": "Achievement 74",
+      "points": 1850,
+      "desc": "Solve 740 words to unlock this achievement"
+    },
+    {
+      "id": "ach_075",
+      "title": "Achievement 75",
+      "points": 1875,
+      "desc": "Solve 750 words to unlock this achievement"
+    },
+    {
+      "id": "ach_076",
+      "title": "Achievement 76",
+      "points": 1900,
+      "desc": "Solve 760 words to unlock this achievement"
+    },
+    {
+      "id": "ach_077",
+      "title": "Achievement 77",
+      "points": 1925,
+      "desc": "Solve 770 words to unlock this achievement"
+    },
+    {
+      "id": "ach_078",
+      "title": "Achievement 78",
+      "points": 1950,
+      "desc": "Solve 780 words to unlock this achievement"
+    },
+    {
+      "id": "ach_079",
+      "title": "Achievement 79",
+      "points": 1975,
+      "desc": "Solve 790 words to unlock this achievement"
+    },
+    {
+      "id": "ach_080",
+      "title": "Achievement 80",
+      "points": 2000,
+      "desc": "Solve 800 words to unlock this achievement"
+    },
+    {
+      "id": "ach_081",
+      "title": "Achievement 81",
+      "points": 2025,
+      "desc": "Solve 810 words to unlock this achievement"
+    },
+    {
+      "id": "ach_082",
+      "title": "Achievement 82",
+      "points": 2050,
+      "desc": "Solve 820 words to unlock this achievement"
+    },
+    {
+      "id": "ach_083",
+      "title": "Achievement 83",
+      "points": 2075,
+      "desc": "Solve 830 words to unlock this achievement"
+    },
+    {
+      "id": "ach_084",
+      "title": "Achievement 84",
+      "points": 2100,
+      "desc": "Solve 840 words to unlock this achievement"
+    },
+    {
+      "id": "ach_085",
+      "title": "Achievement 85",
+      "points": 2125,
+      "desc": "Solve 850 words to unlock this achievement"
+    },
+    {
+      "id": "ach_086",
+      "title": "Achievement 86",
+      "points": 2150,
+      "desc": "Solve 860 words to unlock this achievement"
+    },
+    {
+      "id": "ach_087",
+      "title": "Achievement 87",
+      "points": 2175,
+      "desc": "Solve 870 words to unlock this achievement"
+    },
+    {
+      "id": "ach_088",
+      "title": "Achievement 88",
+      "points": 2200,
+      "desc": "Solve 880 words to unlock this achievement"
+    },
+    {
+      "id": "ach_089",
+      "title": "Achievement 89",
+      "points": 2225,
+      "desc": "Solve 890 words to unlock this achievement"
+    },
+    {
+      "id": "ach_090",
+      "title": "Achievement 90",
+      "points": 2250,
+      "desc": "Solve 900 words to unlock this achievement"
+    },
+    {
+      "id": "ach_091",
+      "title": "Achievement 91",
+      "points": 2275,
+      "desc": "Solve 910 words to unlock this achievement"
+    },
+    {
+      "id": "ach_092",
+      "title": "Achievement 92",
+      "points": 2300,
+      "desc": "Solve 920 words to unlock this achievement"
+    },
+    {
+      "id": "ach_093",
+      "title": "Achievement 93",
+      "points": 2325,
+      "desc": "Solve 930 words to unlock this achievement"
+    },
+    {
+      "id": "ach_094",
+      "title": "Achievement 94",
+      "points": 2350,
+      "desc": "Solve 940 words to unlock this achievement"
+    },
+    {
+      "id": "ach_095",
+      "title": "Achievement 95",
+      "points": 2375,
+      "desc": "Solve 950 words to unlock this achievement"
+    },
+    {
+      "id": "ach_096",
+      "title": "Achievement 96",
+      "points": 2400,
+      "desc": "Solve 960 words to unlock this achievement"
+    },
+    {
+      "id": "ach_097",
+      "title": "Achievement 97",
+      "points": 2425,
+      "desc": "Solve 970 words to unlock this achievement"
+    },
+    {
+      "id": "ach_098",
+      "title": "Achievement 98",
+      "points": 2450,
+      "desc": "Solve 980 words to unlock this achievement"
+    },
+    {
+      "id": "ach_099",
+      "title": "Achievement 99",
+      "points": 2475,
+      "desc": "Solve 990 words to unlock this achievement"
+    },
+    {
+      "id": "ach_100",
+      "title": "Achievement 100",
+      "points": 2500,
+      "desc": "Solve 1000 words to unlock this achievement"
+    },
+    {
+      "id": "ach_101",
+      "title": "Achievement 101",
+      "points": 2525,
+      "desc": "Solve 1010 words to unlock this achievement"
+    },
+    {
+      "id": "ach_102",
+      "title": "Achievement 102",
+      "points": 2550,
+      "desc": "Solve 1020 words to unlock this achievement"
+    },
+    {
+      "id": "ach_103",
+      "title": "Achievement 103",
+      "points": 2575,
+      "desc": "Solve 1030 words to unlock this achievement"
+    },
+    {
+      "id": "ach_104",
+      "title": "Achievement 104",
+      "points": 2600,
+      "desc": "Solve 1040 words to unlock this achievement"
+    },
+    {
+      "id": "ach_105",
+      "title": "Achievement 105",
+      "points": 2625,
+      "desc": "Solve 1050 words to unlock this achievement"
+    },
+    {
+      "id": "ach_106",
+      "title": "Achievement 106",
+      "points": 2650,
+      "desc": "Solve 1060 words to unlock this achievement"
+    },
+    {
+      "id": "ach_107",
+      "title": "Achievement 107",
+      "points": 2675,
+      "desc": "Solve 1070 words to unlock this achievement"
+    },
+    {
+      "id": "ach_108",
+      "title": "Achievement 108",
+      "points": 2700,
+      "desc": "Solve 1080 words to unlock this achievement"
+    },
+    {
+      "id": "ach_109",
+      "title": "Achievement 109",
+      "points": 2725,
+      "desc": "Solve 1090 words to unlock this achievement"
+    },
+    {
+      "id": "ach_110",
+      "title": "Achievement 110",
+      "points": 2750,
+      "desc": "Solve 1100 words to unlock this achievement"
+    },
+    {
+      "id": "ach_111",
+      "title": "Achievement 111",
+      "points": 2775,
+      "desc": "Solve 1110 words to unlock this achievement"
+    },
+    {
+      "id": "ach_112",
+      "title": "Achievement 112",
+      "points": 2800,
+      "desc": "Solve 1120 words to unlock this achievement"
+    },
+    {
+      "id": "ach_113",
+      "title": "Achievement 113",
+      "points": 2825,
+      "desc": "Solve 1130 words to unlock this achievement"
+    },
+    {
+      "id": "ach_114",
+      "title": "Achievement 114",
+      "points": 2850,
+      "desc": "Solve 1140 words to unlock this achievement"
+    },
+    {
+      "id": "ach_115",
+      "title": "Achievement 115",
+      "points": 2875,
+      "desc": "Solve 1150 words to unlock this achievement"
+    },
+    {
+      "id": "ach_116",
+      "title": "Achievement 116",
+      "points": 2900,
+      "desc": "Solve 1160 words to unlock this achievement"
+    },
+    {
+      "id": "ach_117",
+      "title": "Achievement 117",
+      "points": 2925,
+      "desc": "Solve 1170 words to unlock this achievement"
+    },
+    {
+      "id": "ach_118",
+      "title": "Achievement 118",
+      "points": 2950,
+      "desc": "Solve 1180 words to unlock this achievement"
+    },
+    {
+      "id": "ach_119",
+      "title": "Achievement 119",
+      "points": 2975,
+      "desc": "Solve 1190 words to unlock this achievement"
+    },
+    {
+      "id": "ach_120",
+      "title": "Achievement 120",
+      "points": 3000,
+      "desc": "Solve 1200 words to unlock this achievement"
+    },
+    {
+      "id": "ach_121",
+      "title": "Achievement 121",
+      "points": 3025,
+      "desc": "Solve 1210 words to unlock this achievement"
+    },
+    {
+      "id": "ach_122",
+      "title": "Achievement 122",
+      "points": 3050,
+      "desc": "Solve 1220 words to unlock this achievement"
+    },
+    {
+      "id": "ach_123",
+      "title": "Achievement 123",
+      "points": 3075,
+      "desc": "Solve 1230 words to unlock this achievement"
+    },
+    {
+      "id": "ach_124",
+      "title": "Achievement 124",
+      "points": 3100,
+      "desc": "Solve 1240 words to unlock this achievement"
+    },
+    {
+      "id": "ach_125",
+      "title": "Achievement 125",
+      "points": 3125,
+      "desc": "Solve 1250 words to unlock this achievement"
+    },
+    {
+      "id": "ach_126",
+      "title": "Achievement 126",
+      "points": 3150,
+      "desc": "Solve 1260 words to unlock this achievement"
+    },
+    {
+      "id": "ach_127",
+      "title": "Achievement 127",
+      "points": 3175,
+      "desc": "Solve 1270 words to unlock this achievement"
+    },
+    {
+      "id": "ach_128",
+      "title": "Achievement 128",
+      "points": 3200,
+      "desc": "Solve 1280 words to unlock this achievement"
+    },
+    {
+      "id": "ach_129",
+      "title": "Achievement 129",
+      "points": 3225,
+      "desc": "Solve 1290 words to unlock this achievement"
+    },
+    {
+      "id": "ach_130",
+      "title": "Achievement 130",
+      "points": 3250,
+      "desc": "Solve 1300 words to unlock this achievement"
+    },
+    {
+      "id": "ach_131",
+      "title": "Achievement 131",
+      "points": 3275,
+      "desc": "Solve 1310 words to unlock this achievement"
+    },
+    {
+      "id": "ach_132",
+      "title": "Achievement 132",
+      "points": 3300,
+      "desc": "Solve 1320 words to unlock this achievement"
+    },
+    {
+      "id": "ach_133",
+      "title": "Achievement 133",
+      "points": 3325,
+      "desc": "Solve 1330 words to unlock this achievement"
+    },
+    {
+      "id": "ach_134",
+      "title": "Achievement 134",
+      "points": 3350,
+      "desc": "Solve 1340 words to unlock this achievement"
+    },
+    {
+      "id": "ach_135",
+      "title": "Achievement 135",
+      "points": 3375,
+      "desc": "Solve 1350 words to unlock this achievement"
+    },
+    {
+      "id": "ach_136",
+      "title": "Achievement 136",
+      "points": 3400,
+      "desc": "Solve 1360 words to unlock this achievement"
+    },
+    {
+      "id": "ach_137",
+      "title": "Achievement 137",
+      "points": 3425,
+      "desc": "Solve 1370 words to unlock this achievement"
+    },
+    {
+      "id": "ach_138",
+      "title": "Achievement 138",
+      "points": 3450,
+      "desc": "Solve 1380 words to unlock this achievement"
+    },
+    {
+      "id": "ach_139",
+      "title": "Achievement 139",
+      "points": 3475,
+      "desc": "Solve 1390 words to unlock this achievement"
+    },
+    {
+      "id": "ach_140",
+      "title": "Achievement 140",
+      "points": 3500,
+      "desc": "Solve 1400 words to unlock this achievement"
+    },
+    {
+      "id": "ach_141",
+      "title": "Achievement 141",
+      "points": 3525,
+      "desc": "Solve 1410 words to unlock this achievement"
+    },
+    {
+      "id": "ach_142",
+      "title": "Achievement 142",
+      "points": 3550,
+      "desc": "Solve 1420 words to unlock this achievement"
+    },
+    {
+      "id": "ach_143",
+      "title": "Achievement 143",
+      "points": 3575,
+      "desc": "Solve 1430 words to unlock this achievement"
+    },
+    {
+      "id": "ach_144",
+      "title": "Achievement 144",
+      "points": 3600,
+      "desc": "Solve 1440 words to unlock this achievement"
+    },
+    {
+      "id": "ach_145",
+      "title": "Achievement 145",
+      "points": 3625,
+      "desc": "Solve 1450 words to unlock this achievement"
+    },
+    {
+      "id": "ach_146",
+      "title": "Achievement 146",
+      "points": 3650,
+      "desc": "Solve 1460 words to unlock this achievement"
+    },
+    {
+      "id": "ach_147",
+      "title": "Achievement 147",
+      "points": 3675,
+      "desc": "Solve 1470 words to unlock this achievement"
+    },
+    {
+      "id": "ach_148",
+      "title": "Achievement 148",
+      "points": 3700,
+      "desc": "Solve 1480 words to unlock this achievement"
+    },
+    {
+      "id": "ach_149",
+      "title": "Achievement 149",
+      "points": 3725,
+      "desc": "Solve 1490 words to unlock this achievement"
+    },
+    {
+      "id": "ach_150",
+      "title": "Achievement 150",
+      "points": 3750,
+      "desc": "Solve 1500 words to unlock this achievement"
+    },
+    {
+      "id": "ach_151",
+      "title": "Achievement 151",
+      "points": 3775,
+      "desc": "Solve 1510 words to unlock this achievement"
+    },
+    {
+      "id": "ach_152",
+      "title": "Achievement 152",
+      "points": 3800,
+      "desc": "Solve 1520 words to unlock this achievement"
+    },
+    {
+      "id": "ach_153",
+      "title": "Achievement 153",
+      "points": 3825,
+      "desc": "Solve 1530 words to unlock this achievement"
+    },
+    {
+      "id": "ach_154",
+      "title": "Achievement 154",
+      "points": 3850,
+      "desc": "Solve 1540 words to unlock this achievement"
+    },
+    {
+      "id": "ach_155",
+      "title": "Achievement 155",
+      "points": 3875,
+      "desc": "Solve 1550 words to unlock this achievement"
+    },
+    {
+      "id": "ach_156",
+      "title": "Achievement 156",
+      "points": 3900,
+      "desc": "Solve 1560 words to unlock this achievement"
+    },
+    {
+      "id": "ach_157",
+      "title": "Achievement 157",
+      "points": 3925,
+      "desc": "Solve 1570 words to unlock this achievement"
+    },
+    {
+      "id": "ach_158",
+      "title": "Achievement 158",
+      "points": 3950,
+      "desc": "Solve 1580 words to unlock this achievement"
+    },
+    {
+      "id": "ach_159",
+      "title": "Achievement 159",
+      "points": 3975,
+      "desc": "Solve 1590 words to unlock this achievement"
+    },
+    {
+      "id": "ach_160",
+      "title": "Achievement 160",
+      "points": 4000,
+      "desc": "Solve 1600 words to unlock this achievement"
+    },
+    {
+      "id": "ach_161",
+      "title": "Achievement 161",
+      "points": 4025,
+      "desc": "Solve 1610 words to unlock this achievement"
+    },
+    {
+      "id": "ach_162",
+      "title": "Achievement 162",
+      "points": 4050,
+      "desc": "Solve 1620 words to unlock this achievement"
+    },
+    {
+      "id": "ach_163",
+      "title": "Achievement 163",
+      "points": 4075,
+      "desc": "Solve 1630 words to unlock this achievement"
+    },
+    {
+      "id": "ach_164",
+      "title": "Achievement 164",
+      "points": 4100,
+      "desc": "Solve 1640 words to unlock this achievement"
+    },
+    {
+      "id": "ach_165",
+      "title": "Achievement 165",
+      "points": 4125,
+      "desc": "Solve 1650 words to unlock this achievement"
+    },
+    {
+      "id": "ach_166",
+      "title": "Achievement 166",
+      "points": 4150,
+      "desc": "Solve 1660 words to unlock this achievement"
+    },
+    {
+      "id": "ach_167",
+      "title": "Achievement 167",
+      "points": 4175,
+      "desc": "Solve 1670 words to unlock this achievement"
+    },
+    {
+      "id": "ach_168",
+      "title": "Achievement 168",
+      "points": 4200,
+      "desc": "Solve 1680 words to unlock this achievement"
+    },
+    {
+      "id": "ach_169",
+      "title": "Achievement 169",
+      "points": 4225,
+      "desc": "Solve 1690 words to unlock this achievement"
+    },
+    {
+      "id": "ach_170",
+      "title": "Achievement 170",
+      "points": 4250,
+      "desc": "Solve 1700 words to unlock this achievement"
+    },
+    {
+      "id": "ach_171",
+      "title": "Achievement 171",
+      "points": 4275,
+      "desc": "Solve 1710 words to unlock this achievement"
+    },
+    {
+      "id": "ach_172",
+      "title": "Achievement 172",
+      "points": 4300,
+      "desc": "Solve 1720 words to unlock this achievement"
+    },
+    {
+      "id": "ach_173",
+      "title": "Achievement 173",
+      "points": 4325,
+      "desc": "Solve 1730 words to unlock this achievement"
+    },
+    {
+      "id": "ach_174",
+      "title": "Achievement 174",
+      "points": 4350,
+      "desc": "Solve 1740 words to unlock this achievement"
+    },
+    {
+      "id": "ach_175",
+      "title": "Achievement 175",
+      "points": 4375,
+      "desc": "Solve 1750 words to unlock this achievement"
+    },
+    {
+      "id": "ach_176",
+      "title": "Achievement 176",
+      "points": 4400,
+      "desc": "Solve 1760 words to unlock this achievement"
+    },
+    {
+      "id": "ach_177",
+      "title": "Achievement 177",
+      "points": 4425,
+      "desc": "Solve 1770 words to unlock this achievement"
+    },
+    {
+      "id": "ach_178",
+      "title": "Achievement 178",
+      "points": 4450,
+      "desc": "Solve 1780 words to unlock this achievement"
+    },
+    {
+      "id": "ach_179",
+      "title": "Achievement 179",
+      "points": 4475,
+      "desc": "Solve 1790 words to unlock this achievement"
+    },
+    {
+      "id": "ach_180",
+      "title": "Achievement 180",
+      "points": 4500,
+      "desc": "Solve 1800 words to unlock this achievement"
+    },
+    {
+      "id": "ach_181",
+      "title": "Achievement 181",
+      "points": 4525,
+      "desc": "Solve 1810 words to unlock this achievement"
+    },
+    {
+      "id": "ach_182",
+      "title": "Achievement 182",
+      "points": 4550,
+      "desc": "Solve 1820 words to unlock this achievement"
+    },
+    {
+      "id": "ach_183",
+      "title": "Achievement 183",
+      "points": 4575,
+      "desc": "Solve 1830 words to unlock this achievement"
+    },
+    {
+      "id": "ach_184",
+      "title": "Achievement 184",
+      "points": 4600,
+      "desc": "Solve 1840 words to unlock this achievement"
+    },
+    {
+      "id": "ach_185",
+      "title": "Achievement 185",
+      "points": 4625,
+      "desc": "Solve 1850 words to unlock this achievement"
+    },
+    {
+      "id": "ach_186",
+      "title": "Achievement 186",
+      "points": 4650,
+      "desc": "Solve 1860 words to unlock this achievement"
+    },
+    {
+      "id": "ach_187",
+      "title": "Achievement 187",
+      "points": 4675,
+      "desc": "Solve 1870 words to unlock this achievement"
+    },
+    {
+      "id": "ach_188",
+      "title": "Achievement 188",
+      "points": 4700,
+      "desc": "Solve 1880 words to unlock this achievement"
+    },
+    {
+      "id": "ach_189",
+      "title": "Achievement 189",
+      "points": 4725,
+      "desc": "Solve 1890 words to unlock this achievement"
+    },
+    {
+      "id": "ach_190",
+      "title": "Achievement 190",
+      "points": 4750,
+      "desc": "Solve 1900 words to unlock this achievement"
+    },
+    {
+      "id": "ach_191",
+      "title": "Achievement 191",
+      "points": 4775,
+      "desc": "Solve 1910 words to unlock this achievement"
+    },
+    {
+      "id": "ach_192",
+      "title": "Achievement 192",
+      "points": 4800,
+      "desc": "Solve 1920 words to unlock this achievement"
+    },
+    {
+      "id": "ach_193",
+      "title": "Achievement 193",
+      "points": 4825,
+      "desc": "Solve 1930 words to unlock this achievement"
+    },
+    {
+      "id": "ach_194",
+      "title": "Achievement 194",
+      "points": 4850,
+      "desc": "Solve 1940 words to unlock this achievement"
+    },
+    {
+      "id": "ach_195",
+      "title": "Achievement 195",
+      "points": 4875,
+      "desc": "Solve 1950 words to unlock this achievement"
+    },
+    {
+      "id": "ach_196",
+      "title": "Achievement 196",
+      "points": 4900,
+      "desc": "Solve 1960 words to unlock this achievement"
+    },
+    {
+      "id": "ach_197",
+      "title": "Achievement 197",
+      "points": 4925,
+      "desc": "Solve 1970 words to unlock this achievement"
+    },
+    {
+      "id": "ach_198",
+      "title": "Achievement 198",
+      "points": 4950,
+      "desc": "Solve 1980 words to unlock this achievement"
+    },
+    {
+      "id": "ach_199",
+      "title": "Achievement 199",
+      "points": 4975,
+      "desc": "Solve 1990 words to unlock this achievement"
+    },
+    {
+      "id": "ach_200",
+      "title": "Achievement 200",
+      "points": 5000,
+      "desc": "Solve 2000 words to unlock this achievement"
+    },
+    {
+      "id": "ach_201",
+      "title": "Achievement 201",
+      "points": 5025,
+      "desc": "Solve 2010 words to unlock this achievement"
+    },
+    {
+      "id": "ach_202",
+      "title": "Achievement 202",
+      "points": 5050,
+      "desc": "Solve 2020 words to unlock this achievement"
+    },
+    {
+      "id": "ach_203",
+      "title": "Achievement 203",
+      "points": 5075,
+      "desc": "Solve 2030 words to unlock this achievement"
+    },
+    {
+      "id": "ach_204",
+      "title": "Achievement 204",
+      "points": 5100,
+      "desc": "Solve 2040 words to unlock this achievement"
+    },
+    {
+      "id": "ach_205",
+      "title": "Achievement 205",
+      "points": 5125,
+      "desc": "Solve 2050 words to unlock this achievement"
+    },
+    {
+      "id": "ach_206",
+      "title": "Achievement 206",
+      "points": 5150,
+      "desc": "Solve 2060 words to unlock this achievement"
+    },
+    {
+      "id": "ach_207",
+      "title": "Achievement 207",
+      "points": 5175,
+      "desc": "Solve 2070 words to unlock this achievement"
+    },
+    {
+      "id": "ach_208",
+      "title": "Achievement 208",
+      "points": 5200,
+      "desc": "Solve 2080 words to unlock this achievement"
+    },
+    {
+      "id": "ach_209",
+      "title": "Achievement 209",
+      "points": 5225,
+      "desc": "Solve 2090 words to unlock this achievement"
+    },
+    {
+      "id": "ach_210",
+      "title": "Achievement 210",
+      "points": 5250,
+      "desc": "Solve 2100 words to unlock this achievement"
+    },
+    {
+      "id": "ach_211",
+      "title": "Achievement 211",
+      "points": 5275,
+      "desc": "Solve 2110 words to unlock this achievement"
+    },
+    {
+      "id": "ach_212",
+      "title": "Achievement 212",
+      "points": 5300,
+      "desc": "Solve 2120 words to unlock this achievement"
+    },
+    {
+      "id": "ach_213",
+      "title": "Achievement 213",
+      "points": 5325,
+      "desc": "Solve 2130 words to unlock this achievement"
+    },
+    {
+      "id": "ach_214",
+      "title": "Achievement 214",
+      "points": 5350,
+      "desc": "Solve 2140 words to unlock this achievement"
+    },
+    {
+      "id": "ach_215",
+      "title": "Achievement 215",
+      "points": 5375,
+      "desc": "Solve 2150 words to unlock this achievement"
+    },
+    {
+      "id": "ach_216",
+      "title": "Achievement 216",
+      "points": 5400,
+      "desc": "Solve 2160 words to unlock this achievement"
+    },
+    {
+      "id": "ach_217",
+      "title": "Achievement 217",
+      "points": 5425,
+      "desc": "Solve 2170 words to unlock this achievement"
+    },
+    {
+      "id": "ach_218",
+      "title": "Achievement 218",
+      "points": 5450,
+      "desc": "Solve 2180 words to unlock this achievement"
+    },
+    {
+      "id": "ach_219",
+      "title": "Achievement 219",
+      "points": 5475,
+      "desc": "Solve 2190 words to unlock this achievement"
+    },
+    {
+      "id": "ach_220",
+      "title": "Achievement 220",
+      "points": 5500,
+      "desc": "Solve 2200 words to unlock this achievement"
+    },
+    {
+      "id": "ach_221",
+      "title": "Achievement 221",
+      "points": 5525,
+      "desc": "Solve 2210 words to unlock this achievement"
+    },
+    {
+      "id": "ach_222",
+      "title": "Achievement 222",
+      "points": 5550,
+      "desc": "Solve 2220 words to unlock this achievement"
+    },
+    {
+      "id": "ach_223",
+      "title": "Achievement 223",
+      "points": 5575,
+      "desc": "Solve 2230 words to unlock this achievement"
+    },
+    {
+      "id": "ach_224",
+      "title": "Achievement 224",
+      "points": 5600,
+      "desc": "Solve 2240 words to unlock this achievement"
+    },
+    {
+      "id": "ach_225",
+      "title": "Achievement 225",
+      "points": 5625,
+      "desc": "Solve 2250 words to unlock this achievement"
+    },
+    {
+      "id": "ach_226",
+      "title": "Achievement 226",
+      "points": 5650,
+      "desc": "Solve 2260 words to unlock this achievement"
+    },
+    {
+      "id": "ach_227",
+      "title": "Achievement 227",
+      "points": 5675,
+      "desc": "Solve 2270 words to unlock this achievement"
+    },
+    {
+      "id": "ach_228",
+      "title": "Achievement 228",
+      "points": 5700,
+      "desc": "Solve 2280 words to unlock this achievement"
+    },
+    {
+      "id": "ach_229",
+      "title": "Achievement 229",
+      "points": 5725,
+      "desc": "Solve 2290 words to unlock this achievement"
+    },
+    {
+      "id": "ach_230",
+      "title": "Achievement 230",
+      "points": 5750,
+      "desc": "Solve 2300 words to unlock this achievement"
+    },
+    {
+      "id": "ach_231",
+      "title": "Achievement 231",
+      "points": 5775,
+      "desc": "Solve 2310 words to unlock this achievement"
+    },
+    {
+      "id": "ach_232",
+      "title": "Achievement 232",
+      "points": 5800,
+      "desc": "Solve 2320 words to unlock this achievement"
+    },
+    {
+      "id": "ach_233",
+      "title": "Achievement 233",
+      "points": 5825,
+      "desc": "Solve 2330 words to unlock this achievement"
+    },
+    {
+      "id": "ach_234",
+      "title": "Achievement 234",
+      "points": 5850,
+      "desc": "Solve 2340 words to unlock this achievement"
+    },
+    {
+      "id": "ach_235",
+      "title": "Achievement 235",
+      "points": 5875,
+      "desc": "Solve 2350 words to unlock this achievement"
+    },
+    {
+      "id": "ach_236",
+      "title": "Achievement 236",
+      "points": 5900,
+      "desc": "Solve 2360 words to unlock this achievement"
+    },
+    {
+      "id": "ach_237",
+      "title": "Achievement 237",
+      "points": 5925,
+      "desc": "Solve 2370 words to unlock this achievement"
+    },
+    {
+      "id": "ach_238",
+      "title": "Achievement 238",
+      "points": 5950,
+      "desc": "Solve 2380 words to unlock this achievement"
+    },
+    {
+      "id": "ach_239",
+      "title": "Achievement 239",
+      "points": 5975,
+      "desc": "Solve 2390 words to unlock this achievement"
+    },
+    {
+      "id": "ach_240",
+      "title": "Achievement 240",
+      "points": 6000,
+      "desc": "Solve 2400 words to unlock this achievement"
+    },
+    {
+      "id": "ach_241",
+      "title": "Achievement 241",
+      "points": 6025,
+      "desc": "Solve 2410 words to unlock this achievement"
+    },
+    {
+      "id": "ach_242",
+      "title": "Achievement 242",
+      "points": 6050,
+      "desc": "Solve 2420 words to unlock this achievement"
+    },
+    {
+      "id": "ach_243",
+      "title": "Achievement 243",
+      "points": 6075,
+      "desc": "Solve 2430 words to unlock this achievement"
+    },
+    {
+      "id": "ach_244",
+      "title": "Achievement 244",
+      "points": 6100,
+      "desc": "Solve 2440 words to unlock this achievement"
+    },
+    {
+      "id": "ach_245",
+      "title": "Achievement 245",
+      "points": 6125,
+      "desc": "Solve 2450 words to unlock this achievement"
+    },
+    {
+      "id": "ach_246",
+      "title": "Achievement 246",
+      "points": 6150,
+      "desc": "Solve 2460 words to unlock this achievement"
+    },
+    {
+      "id": "ach_247",
+      "title": "Achievement 247",
+      "points": 6175,
+      "desc": "Solve 2470 words to unlock this achievement"
+    },
+    {
+      "id": "ach_248",
+      "title": "Achievement 248",
+      "points": 6200,
+      "desc": "Solve 2480 words to unlock this achievement"
+    },
+    {
+      "id": "ach_249",
+      "title": "Achievement 249",
+      "points": 6225,
+      "desc": "Solve 2490 words to unlock this achievement"
+    },
+    {
+      "id": "ach_250",
+      "title": "Achievement 250",
+      "points": 6250,
+      "desc": "Solve 2500 words to unlock this achievement"
+    },
+    {
+      "id": "ach_251",
+      "title": "Achievement 251",
+      "points": 6275,
+      "desc": "Solve 2510 words to unlock this achievement"
+    },
+    {
+      "id": "ach_252",
+      "title": "Achievement 252",
+      "points": 6300,
+      "desc": "Solve 2520 words to unlock this achievement"
+    },
+    {
+      "id": "ach_253",
+      "title": "Achievement 253",
+      "points": 6325,
+      "desc": "Solve 2530 words to unlock this achievement"
+    },
+    {
+      "id": "ach_254",
+      "title": "Achievement 254",
+      "points": 6350,
+      "desc": "Solve 2540 words to unlock this achievement"
+    },
+    {
+      "id": "ach_255",
+      "title": "Achievement 255",
+      "points": 6375,
+      "desc": "Solve 2550 words to unlock this achievement"
+    },
+    {
+      "id": "ach_256",
+      "title": "Achievement 256",
+      "points": 6400,
+      "desc": "Solve 2560 words to unlock this achievement"
+    },
+    {
+      "id": "ach_257",
+      "title": "Achievement 257",
+      "points": 6425,
+      "desc": "Solve 2570 words to unlock this achievement"
+    },
+    {
+      "id": "ach_258",
+      "title": "Achievement 258",
+      "points": 6450,
+      "desc": "Solve 2580 words to unlock this achievement"
+    },
+    {
+      "id": "ach_259",
+      "title": "Achievement 259",
+      "points": 6475,
+      "desc": "Solve 2590 words to unlock this achievement"
+    },
+    {
+      "id": "ach_260",
+      "title": "Achievement 260",
+      "points": 6500,
+      "desc": "Solve 2600 words to unlock this achievement"
+    },
+    {
+      "id": "ach_261",
+      "title": "Achievement 261",
+      "points": 6525,
+      "desc": "Solve 2610 words to unlock this achievement"
+    },
+    {
+      "id": "ach_262",
+      "title": "Achievement 262",
+      "points": 6550,
+      "desc": "Solve 2620 words to unlock this achievement"
+    },
+    {
+      "id": "ach_263",
+      "title": "Achievement 263",
+      "points": 6575,
+      "desc": "Solve 2630 words to unlock this achievement"
+    },
+    {
+      "id": "ach_264",
+      "title": "Achievement 264",
+      "points": 6600,
+      "desc": "Solve 2640 words to unlock this achievement"
+    },
+    {
+      "id": "ach_265",
+      "title": "Achievement 265",
+      "points": 6625,
+      "desc": "Solve 2650 words to unlock this achievement"
+    },
+    {
+      "id": "ach_266",
+      "title": "Achievement 266",
+      "points": 6650,
+      "desc": "Solve 2660 words to unlock this achievement"
+    },
+    {
+      "id": "ach_267",
+      "title": "Achievement 267",
+      "points": 6675,
+      "desc": "Solve 2670 words to unlock this achievement"
+    },
+    {
+      "id": "ach_268",
+      "title": "Achievement 268",
+      "points": 6700,
+      "desc": "Solve 2680 words to unlock this achievement"
+    },
+    {
+      "id": "ach_269",
+      "title": "Achievement 269",
+      "points": 6725,
+      "desc": "Solve 2690 words to unlock this achievement"
+    },
+    {
+      "id": "ach_270",
+      "title": "Achievement 270",
+      "points": 6750,
+      "desc": "Solve 2700 words to unlock this achievement"
+    },
+    {
+      "id": "ach_271",
+      "title": "Achievement 271",
+      "points": 6775,
+      "desc": "Solve 2710 words to unlock this achievement"
+    },
+    {
+      "id": "ach_272",
+      "title": "Achievement 272",
+      "points": 6800,
+      "desc": "Solve 2720 words to unlock this achievement"
+    },
+    {
+      "id": "ach_273",
+      "title": "Achievement 273",
+      "points": 6825,
+      "desc": "Solve 2730 words to unlock this achievement"
+    },
+    {
+      "id": "ach_274",
+      "title": "Achievement 274",
+      "points": 6850,
+      "desc": "Solve 2740 words to unlock this achievement"
+    },
+    {
+      "id": "ach_275",
+      "title": "Achievement 275",
+      "points": 6875,
+      "desc": "Solve 2750 words to unlock this achievement"
+    },
+    {
+      "id": "ach_276",
+      "title": "Achievement 276",
+      "points": 6900,
+      "desc": "Solve 2760 words to unlock this achievement"
+    },
+    {
+      "id": "ach_277",
+      "title": "Achievement 277",
+      "points": 6925,
+      "desc": "Solve 2770 words to unlock this achievement"
+    },
+    {
+      "id": "ach_278",
+      "title": "Achievement 278",
+      "points": 6950,
+      "desc": "Solve 2780 words to unlock this achievement"
+    },
+    {
+      "id": "ach_279",
+      "title": "Achievement 279",
+      "points": 6975,
+      "desc": "Solve 2790 words to unlock this achievement"
+    },
+    {
+      "id": "ach_280",
+      "title": "Achievement 280",
+      "points": 7000,
+      "desc": "Solve 2800 words to unlock this achievement"
+    },
+    {
+      "id": "ach_281",
+      "title": "Achievement 281",
+      "points": 7025,
+      "desc": "Solve 2810 words to unlock this achievement"
+    },
+    {
+      "id": "ach_282",
+      "title": "Achievement 282",
+      "points": 7050,
+      "desc": "Solve 2820 words to unlock this achievement"
+    },
+    {
+      "id": "ach_283",
+      "title": "Achievement 283",
+      "points": 7075,
+      "desc": "Solve 2830 words to unlock this achievement"
+    },
+    {
+      "id": "ach_284",
+      "title": "Achievement 284",
+      "points": 7100,
+      "desc": "Solve 2840 words to unlock this achievement"
+    },
+    {
+      "id": "ach_285",
+      "title": "Achievement 285",
+      "points": 7125,
+      "desc": "Solve 2850 words to unlock this achievement"
+    },
+    {
+      "id": "ach_286",
+      "title": "Achievement 286",
+      "points": 7150,
+      "desc": "Solve 2860 words to unlock this achievement"
+    },
+    {
+      "id": "ach_287",
+      "title": "Achievement 287",
+      "points": 7175,
+      "desc": "Solve 2870 words to unlock this achievement"
+    },
+    {
+      "id": "ach_288",
+      "title": "Achievement 288",
+      "points": 7200,
+      "desc": "Solve 2880 words to unlock this achievement"
+    },
+    {
+      "id": "ach_289",
+      "title": "Achievement 289",
+      "points": 7225,
+      "desc": "Solve 2890 words to unlock this achievement"
+    },
+    {
+      "id": "ach_290",
+      "title": "Achievement 290",
+      "points": 7250,
+      "desc": "Solve 2900 words to unlock this achievement"
+    },
+    {
+      "id": "ach_291",
+      "title": "Achievement 291",
+      "points": 7275,
+      "desc": "Solve 2910 words to unlock this achievement"
+    },
+    {
+      "id": "ach_292",
+      "title": "Achievement 292",
+      "points": 7300,
+      "desc": "Solve 2920 words to unlock this achievement"
+    },
+    {
+      "id": "ach_293",
+      "title": "Achievement 293",
+      "points": 7325,
+      "desc": "Solve 2930 words to unlock this achievement"
+    },
+    {
+      "id": "ach_294",
+      "title": "Achievement 294",
+      "points": 7350,
+      "desc": "Solve 2940 words to unlock this achievement"
+    },
+    {
+      "id": "ach_295",
+      "title": "Achievement 295",
+      "points": 7375,
+      "desc": "Solve 2950 words to unlock this achievement"
+    },
+    {
+      "id": "ach_296",
+      "title": "Achievement 296",
+      "points": 7400,
+      "desc": "Solve 2960 words to unlock this achievement"
+    },
+    {
+      "id": "ach_297",
+      "title": "Achievement 297",
+      "points": 7425,
+      "desc": "Solve 2970 words to unlock this achievement"
+    },
+    {
+      "id": "ach_298",
+      "title": "Achievement 298",
+      "points": 7450,
+      "desc": "Solve 2980 words to unlock this achievement"
+    },
+    {
+      "id": "ach_299",
+      "title": "Achievement 299",
+      "points": 7475,
+      "desc": "Solve 2990 words to unlock this achievement"
+    },
+    {
+      "id": "ach_300",
+      "title": "Achievement 300",
+      "points": 7500,
+      "desc": "Solve 3000 words to unlock this achievement"
+    }
+  ],
+  "tips": [
+    "Tip 1: Helpful gameplay advice to improve your word game performance",
+    "Tip 2: Helpful gameplay advice to improve your word game performance",
+    "Tip 3: Helpful gameplay advice to improve your word game performance",
+    "Tip 4: Helpful gameplay advice to improve your word game performance",
+    "Tip 5: Helpful gameplay advice to improve your word game performance",
+    "Tip 6: Helpful gameplay advice to improve your word game performance",
+    "Tip 7: Helpful gameplay advice to improve your word game performance",
+    "Tip 8: Helpful gameplay advice to improve your word game performance",
+    "Tip 9: Helpful gameplay advice to improve your word game performance",
+    "Tip 10: Helpful gameplay advice to improve your word game performance",
+    "Tip 11: Helpful gameplay advice to improve your word game performance",
+    "Tip 12: Helpful gameplay advice to improve your word game performance",
+    "Tip 13: Helpful gameplay advice to improve your word game performance",
+    "Tip 14: Helpful gameplay advice to improve your word game performance",
+    "Tip 15: Helpful gameplay advice to improve your word game performance",
+    "Tip 16: Helpful gameplay advice to improve your word game performance",
+    "Tip 17: Helpful gameplay advice to improve your word game performance",
+    "Tip 18: Helpful gameplay advice to improve your word game performance",
+    "Tip 19: Helpful gameplay advice to improve your word game performance",
+    "Tip 20: Helpful gameplay advice to improve your word game performance",
+    "Tip 21: Helpful gameplay advice to improve your word game performance",
+    "Tip 22: Helpful gameplay advice to improve your word game performance",
+    "Tip 23: Helpful gameplay advice to improve your word game performance",
+    "Tip 24: Helpful gameplay advice to improve your word game performance",
+    "Tip 25: Helpful gameplay advice to improve your word game performance",
+    "Tip 26: Helpful gameplay advice to improve your word game performance",
+    "Tip 27: Helpful gameplay advice to improve your word game performance",
+    "Tip 28: Helpful gameplay advice to improve your word game performance",
+    "Tip 29: Helpful gameplay advice to improve your word game performance",
+    "Tip 30: Helpful gameplay advice to improve your word game performance",
+    "Tip 31: Helpful gameplay advice to improve your word game performance",
+    "Tip 32: Helpful gameplay advice to improve your word game performance",
+    "Tip 33: Helpful gameplay advice to improve your word game performance",
+    "Tip 34: Helpful gameplay advice to improve your word game performance",
+    "Tip 35: Helpful gameplay advice to improve your word game performance",
+    "Tip 36: Helpful gameplay advice to improve your word game performance",
+    "Tip 37: Helpful gameplay advice to improve your word game performance",
+    "Tip 38: Helpful gameplay advice to improve your word game performance",
+    "Tip 39: Helpful gameplay advice to improve your word game performance",
+    "Tip 40: Helpful gameplay advice to improve your word game performance",
+    "Tip 41: Helpful gameplay advice to improve your word game performance",
+    "Tip 42: Helpful gameplay advice to improve your word game performance",
+    "Tip 43: Helpful gameplay advice to improve your word game performance",
+    "Tip 44: Helpful gameplay advice to improve your word game performance",
+    "Tip 45: Helpful gameplay advice to improve your word game performance",
+    "Tip 46: Helpful gameplay advice to improve your word game performance",
+    "Tip 47: Helpful gameplay advice to improve your word game performance",
+    "Tip 48: Helpful gameplay advice to improve your word game performance",
+    "Tip 49: Helpful gameplay advice to improve your word game performance",
+    "Tip 50: Helpful gameplay advice to improve your word game performance",
+    "Tip 51: Helpful gameplay advice to improve your word game performance",
+    "Tip 52: Helpful gameplay advice to improve your word game performance",
+    "Tip 53: Helpful gameplay advice to improve your word game performance",
+    "Tip 54: Helpful gameplay advice to improve your word game performance",
+    "Tip 55: Helpful gameplay advice to improve your word game performance",
+    "Tip 56: Helpful gameplay advice to improve your word game performance",
+    "Tip 57: Helpful gameplay advice to improve your word game performance",
+    "Tip 58: Helpful gameplay advice to improve your word game performance",
+    "Tip 59: Helpful gameplay advice to improve your word game performance",
+    "Tip 60: Helpful gameplay advice to improve your word game performance",
+    "Tip 61: Helpful gameplay advice to improve your word game performance",
+    "Tip 62: Helpful gameplay advice to improve your word game performance",
+    "Tip 63: Helpful gameplay advice to improve your word game performance",
+    "Tip 64: Helpful gameplay advice to improve your word game performance",
+    "Tip 65: Helpful gameplay advice to improve your word game performance",
+    "Tip 66: Helpful gameplay advice to improve your word game performance",
+    "Tip 67: Helpful gameplay advice to improve your word game performance",
+    "Tip 68: Helpful gameplay advice to improve your word game performance",
+    "Tip 69: Helpful gameplay advice to improve your word game performance",
+    "Tip 70: Helpful gameplay advice to improve your word game performance",
+    "Tip 71: Helpful gameplay advice to improve your word game performance",
+    "Tip 72: Helpful gameplay advice to improve your word game performance",
+    "Tip 73: Helpful gameplay advice to improve your word game performance",
+    "Tip 74: Helpful gameplay advice to improve your word game performance",
+    "Tip 75: Helpful gameplay advice to improve your word game performance",
+    "Tip 76: Helpful gameplay advice to improve your word game performance",
+    "Tip 77: Helpful gameplay advice to improve your word game performance",
+    "Tip 78: Helpful gameplay advice to improve your word game performance",
+    "Tip 79: Helpful gameplay advice to improve your word game performance",
+    "Tip 80: Helpful gameplay advice to improve your word game performance",
+    "Tip 81: Helpful gameplay advice to improve your word game performance",
+    "Tip 82: Helpful gameplay advice to improve your word game performance",
+    "Tip 83: Helpful gameplay advice to improve your word game performance",
+    "Tip 84: Helpful gameplay advice to improve your word game performance",
+    "Tip 85: Helpful gameplay advice to improve your word game performance",
+    "Tip 86: Helpful gameplay advice to improve your word game performance",
+    "Tip 87: Helpful gameplay advice to improve your word game performance",
+    "Tip 88: Helpful gameplay advice to improve your word game performance",
+    "Tip 89: Helpful gameplay advice to improve your word game performance",
+    "Tip 90: Helpful gameplay advice to improve your word game performance",
+    "Tip 91: Helpful gameplay advice to improve your word game performance",
+    "Tip 92: Helpful gameplay advice to improve your word game performance",
+    "Tip 93: Helpful gameplay advice to improve your word game performance",
+    "Tip 94: Helpful gameplay advice to improve your word game performance",
+    "Tip 95: Helpful gameplay advice to improve your word game performance",
+    "Tip 96: Helpful gameplay advice to improve your word game performance",
+    "Tip 97: Helpful gameplay advice to improve your word game performance",
+    "Tip 98: Helpful gameplay advice to improve your word game performance",
+    "Tip 99: Helpful gameplay advice to improve your word game performance",
+    "Tip 100: Helpful gameplay advice to improve your word game performance",
+    "Tip 101: Helpful gameplay advice to improve your word game performance",
+    "Tip 102: Helpful gameplay advice to improve your word game performance",
+    "Tip 103: Helpful gameplay advice to improve your word game performance",
+    "Tip 104: Helpful gameplay advice to improve your word game performance",
+    "Tip 105: Helpful gameplay advice to improve your word game performance",
+    "Tip 106: Helpful gameplay advice to improve your word game performance",
+    "Tip 107: Helpful gameplay advice to improve your word game performance",
+    "Tip 108: Helpful gameplay advice to improve your word game performance",
+    "Tip 109: Helpful gameplay advice to improve your word game performance",
+    "Tip 110: Helpful gameplay advice to improve your word game performance",
+    "Tip 111: Helpful gameplay advice to improve your word game performance",
+    "Tip 112: Helpful gameplay advice to improve your word game performance",
+    "Tip 113: Helpful gameplay advice to improve your word game performance",
+    "Tip 114: Helpful gameplay advice to improve your word game performance",
+    "Tip 115: Helpful gameplay advice to improve your word game performance",
+    "Tip 116: Helpful gameplay advice to improve your word game performance",
+    "Tip 117: Helpful gameplay advice to improve your word game performance",
+    "Tip 118: Helpful gameplay advice to improve your word game performance",
+    "Tip 119: Helpful gameplay advice to improve your word game performance",
+    "Tip 120: Helpful gameplay advice to improve your word game performance",
+    "Tip 121: Helpful gameplay advice to improve your word game performance",
+    "Tip 122: Helpful gameplay advice to improve your word game performance",
+    "Tip 123: Helpful gameplay advice to improve your word game performance",
+    "Tip 124: Helpful gameplay advice to improve your word game performance",
+    "Tip 125: Helpful gameplay advice to improve your word game performance",
+    "Tip 126: Helpful gameplay advice to improve your word game performance",
+    "Tip 127: Helpful gameplay advice to improve your word game performance",
+    "Tip 128: Helpful gameplay advice to improve your word game performance",
+    "Tip 129: Helpful gameplay advice to improve your word game performance",
+    "Tip 130: Helpful gameplay advice to improve your word game performance",
+    "Tip 131: Helpful gameplay advice to improve your word game performance",
+    "Tip 132: Helpful gameplay advice to improve your word game performance",
+    "Tip 133: Helpful gameplay advice to improve your word game performance",
+    "Tip 134: Helpful gameplay advice to improve your word game performance",
+    "Tip 135: Helpful gameplay advice to improve your word game performance",
+    "Tip 136: Helpful gameplay advice to improve your word game performance",
+    "Tip 137: Helpful gameplay advice to improve your word game performance",
+    "Tip 138: Helpful gameplay advice to improve your word game performance",
+    "Tip 139: Helpful gameplay advice to improve your word game performance",
+    "Tip 140: Helpful gameplay advice to improve your word game performance",
+    "Tip 141: Helpful gameplay advice to improve your word game performance",
+    "Tip 142: Helpful gameplay advice to improve your word game performance",
+    "Tip 143: Helpful gameplay advice to improve your word game performance",
+    "Tip 144: Helpful gameplay advice to improve your word game performance",
+    "Tip 145: Helpful gameplay advice to improve your word game performance",
+    "Tip 146: Helpful gameplay advice to improve your word game performance",
+    "Tip 147: Helpful gameplay advice to improve your word game performance",
+    "Tip 148: Helpful gameplay advice to improve your word game performance",
+    "Tip 149: Helpful gameplay advice to improve your word game performance",
+    "Tip 150: Helpful gameplay advice to improve your word game performance",
+    "Tip 151: Helpful gameplay advice to improve your word game performance",
+    "Tip 152: Helpful gameplay advice to improve your word game performance",
+    "Tip 153: Helpful gameplay advice to improve your word game performance",
+    "Tip 154: Helpful gameplay advice to improve your word game performance",
+    "Tip 155: Helpful gameplay advice to improve your word game performance",
+    "Tip 156: Helpful gameplay advice to improve your word game performance",
+    "Tip 157: Helpful gameplay advice to improve your word game performance",
+    "Tip 158: Helpful gameplay advice to improve your word game performance",
+    "Tip 159: Helpful gameplay advice to improve your word game performance",
+    "Tip 160: Helpful gameplay advice to improve your word game performance",
+    "Tip 161: Helpful gameplay advice to improve your word game performance",
+    "Tip 162: Helpful gameplay advice to improve your word game performance",
+    "Tip 163: Helpful gameplay advice to improve your word game performance",
+    "Tip 164: Helpful gameplay advice to improve your word game performance",
+    "Tip 165: Helpful gameplay advice to improve your word game performance",
+    "Tip 166: Helpful gameplay advice to improve your word game performance",
+    "Tip 167: Helpful gameplay advice to improve your word game performance",
+    "Tip 168: Helpful gameplay advice to improve your word game performance",
+    "Tip 169: Helpful gameplay advice to improve your word game performance",
+    "Tip 170: Helpful gameplay advice to improve your word game performance",
+    "Tip 171: Helpful gameplay advice to improve your word game performance",
+    "Tip 172: Helpful gameplay advice to improve your word game performance",
+    "Tip 173: Helpful gameplay advice to improve your word game performance",
+    "Tip 174: Helpful gameplay advice to improve your word game performance",
+    "Tip 175: Helpful gameplay advice to improve your word game performance",
+    "Tip 176: Helpful gameplay advice to improve your word game performance",
+    "Tip 177: Helpful gameplay advice to improve your word game performance",
+    "Tip 178: Helpful gameplay advice to improve your word game performance",
+    "Tip 179: Helpful gameplay advice to improve your word game performance",
+    "Tip 180: Helpful gameplay advice to improve your word game performance",
+    "Tip 181: Helpful gameplay advice to improve your word game performance",
+    "Tip 182: Helpful gameplay advice to improve your word game performance",
+    "Tip 183: Helpful gameplay advice to improve your word game performance",
+    "Tip 184: Helpful gameplay advice to improve your word game performance",
+    "Tip 185: Helpful gameplay advice to improve your word game performance",
+    "Tip 186: Helpful gameplay advice to improve your word game performance",
+    "Tip 187: Helpful gameplay advice to improve your word game performance",
+    "Tip 188: Helpful gameplay advice to improve your word game performance",
+    "Tip 189: Helpful gameplay advice to improve your word game performance",
+    "Tip 190: Helpful gameplay advice to improve your word game performance",
+    "Tip 191: Helpful gameplay advice to improve your word game performance",
+    "Tip 192: Helpful gameplay advice to improve your word game performance",
+    "Tip 193: Helpful gameplay advice to improve your word game performance",
+    "Tip 194: Helpful gameplay advice to improve your word game performance",
+    "Tip 195: Helpful gameplay advice to improve your word game performance",
+    "Tip 196: Helpful gameplay advice to improve your word game performance",
+    "Tip 197: Helpful gameplay advice to improve your word game performance",
+    "Tip 198: Helpful gameplay advice to improve your word game performance",
+    "Tip 199: Helpful gameplay advice to improve your word game performance",
+    "Tip 200: Helpful gameplay advice to improve your word game performance"
+  ]
+}

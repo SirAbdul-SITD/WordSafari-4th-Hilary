@@ -1,0 +1,52 @@
+# WORDSAFARI — GOOGLE PLAY STORE LISTING
+# Bundle: com.hilaryapps.wordsafari
+
+APP TITLE
+━━━━━━━━━━━━━━━━━━━━━━━
+WordSafari: Word Scramble Puzzle Game
+
+SHORT DESCRIPTION (80 chars)
+━━━━━━━━━━━━━━━━━━━━━━━
+Hunt for words on the safari! Warm adventure word puzzle with 21 wild categories.
+
+LONG DESCRIPTION
+━━━━━━━━━━━━━━━━━━━━━━━
+🦁 WordSafari — Hunt Words. Conquer the Safari.
+
+Venture into the word wilderness. WordSafari brings the thrill of the hunt to word puzzles — warm earthy tones, safari adventure, and thousands of words to track down.
+
+🎮 THREE SAFARI MODES
+🧩 Classic Safari — Track 100 words per category session through open terrain
+⛓ Chain Hunt — Follow the word trail — last letter leads to the next word
+⚡ Blitz Rush — 60-second word stampede. How many can you catch?
+
+✅ FEATURES
+• 3,000+ words · 21 categories
+• Warm golden safari adventure theme
+• Blast tiles — fire up your score 2x
+• Streak combos with wild multipliers
+• Hint & Shuffle power-ups
+• 100% offline · No ads · Free
+
+Download WordSafari. The hunt is on. 🦁
+
+CATEGORY: Games > Word
+RATING: Everyone (E) · IARC 3+
+PRICING: Free · No IAPs · No Ads
+
+CONTACT
+━━━━━━━━━━━━━━━━━━━━━━━
+Email: support@wordsafari.app
+Privacy: https://wordsafari.app/privacy
+
+WHAT'S NEW v1.0
+━━━━━━━━━━━━━━━━━━━━━━━
+🎉 Welcome to WordSafari v1.0!
+• Classic, Chain & Blitz modes
+• 3,000+ words · 21 categories
+• Blast tiles · combos · coins
+• 100% offline · no ads · free
+
+DATA SAFETY: No data collected · Local only · Families: YES
+
+BUNDLE: com.hilaryapps.wordsafari · v1.0.0+1 · minSDK 21
