@@ -45,9 +45,9 @@ class _LevelSelectScreenState extends State<LevelSelectScreen> with RouteAware {
         ),
         SliverList(
           delegate: SliverChildListDelegate([
-            _section('EASY', kEasyColor, 0, 49, '6×6'),
-            _section('MEDIUM', kMediumColor, 50, 99, '8×8'),
-            _section('HARD', kHardColor, 100, 149, '10×10'),
+            _section('EASY', kEasyColor, 0, 49, '5×5'),
+            _section('MEDIUM', kMediumColor, 50, 99, '6×6'),
+            _section('HARD', kHardColor, 100, 149, '7×7'),
             const SizedBox(height: 32),
           ]),
         ),

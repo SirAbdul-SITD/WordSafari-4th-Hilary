@@ -50,16 +50,19 @@ class _GameScreenState extends State<GameScreen>
             HapticFeedback.heavyImpact();
           }
         }
+        final total = st.n * st.n;
         return Stack(children: [
           SafeArea(
             child: Column(children: [
               _hud(st),
-              const SizedBox(height: 2),
-              Text('${st.pearlCount} PEARLS · ONE CLOSED LOOP',
-                  style: techno(10, color: kTextDim, letterSpacing: 2)),
+              const SizedBox(height: 4),
+              Text(
+                  '${st.linkedCount}/${st.level.pairCount} LINKED · ${st.filledCount}/$total FILLED',
+                  style: techno(11, color: kTextDim, letterSpacing: 1.5)),
               Expanded(child: Center(child: _board(st))),
-              _legend(),
-              const SizedBox(height: 8),
+              Text('DRAG FROM A NUMBER TO ITS TWIN · FILL EVERY CELL',
+                  style: techno(9, color: kTextDim, letterSpacing: 1.2)),
+              const SizedBox(height: 10),
               _bottomBar(st),
               const SizedBox(height: 12),
             ]),
@@ -69,31 +72,6 @@ class _GameScreenState extends State<GameScreen>
       }),
     );
   }
-
-  Widget _legend() => Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          _legendItem(kPearlWhite, 'GO STRAIGHT, TURN BESIDE'),
-          const SizedBox(width: 14),
-          _legendItem(kPearlBlack, 'TURN, STRAIGHT BESIDE'),
-        ],
-      );
-
-  Widget _legendItem(Color c, String label) => Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Container(
-            width: 13,
-            height: 13,
-            decoration: BoxDecoration(
-                color: c,
-                shape: BoxShape.circle,
-                border: Border.all(color: kTextDim, width: 1)),
-          ),
-          const SizedBox(width: 5),
-          Text(label, style: techno(7.5, color: kTextDim, letterSpacing: 0.8)),
-        ],
-      );
 
   Widget _hud(GameState st) {
     final dc = st.level.difficulty == 'Easy'
@@ -135,45 +113,39 @@ class _GameScreenState extends State<GameScreen>
 
   Widget _board(GameState st) {
     final size = MediaQuery.of(context).size;
-    final boardSize = (size.width - 36).clamp(0.0, size.height * 0.56);
-    final n = st.n;
-    final cell = boardSize / n;
+    final boardSize = (size.width - 28).clamp(0.0, size.height * 0.58);
+    final cell = boardSize / st.n;
 
-    void hit(Offset p) {
-      // tap near a cell-center lattice edge: snap to nearest center, then pick
-      // the edge toward the nearest adjacent center.
-      final cx = (p.dx - cell / 2) / cell;
-      final cy = (p.dy - cell / 2) / cell;
-      final r = cy.round().clamp(0, n - 1);
-      final c = cx.round().clamp(0, n - 1);
-      final fracX = (p.dx - (c * cell + cell / 2)) / cell;
-      final fracY = (p.dy - (r * cell + cell / 2)) / cell;
-      int a = r * n + c, b;
-      if (fracX.abs() > fracY.abs()) {
-        final nc = (c + (fracX > 0 ? 1 : -1)).clamp(0, n - 1);
-        b = r * n + nc;
-      } else {
-        final nr = (r + (fracY > 0 ? 1 : -1)).clamp(0, n - 1);
-        b = nr * n + c;
-      }
-      if (a == b) return;
-      if (Preferences.instance.isVibrationEnabled()) {
-        HapticFeedback.selectionClick();
-      }
-      st.tapEdge(a, b);
+    int? cellAt(Offset p) {
+      final c = (p.dx / cell).floor();
+      final r = (p.dy / cell).floor();
+      if (r < 0 || c < 0 || r >= st.n || c >= st.n) return null;
+      return r * st.n + c;
     }
 
     return Container(
-      width: boardSize + 20,
-      height: boardSize + 20,
-      padding: const EdgeInsets.all(10),
+      width: boardSize + 12,
+      height: boardSize + 12,
+      padding: const EdgeInsets.all(6),
       decoration: BoxDecoration(
-        color: kSurface.withOpacity(0.5),
+        color: kSurface.withOpacity(0.4),
         borderRadius: BorderRadius.circular(16),
         border: Border.all(color: kBorder, width: 1.5),
       ),
       child: GestureDetector(
-        onTapUp: (d) => hit(d.localPosition),
+        onPanStart: (d) {
+          final i = cellAt(d.localPosition);
+          if (i == null) return;
+          if (Preferences.instance.isVibrationEnabled()) {
+            HapticFeedback.selectionClick();
+          }
+          st.beginAt(i);
+        },
+        onPanUpdate: (d) {
+          final i = cellAt(d.localPosition);
+          if (i != null) st.extendTo(i);
+        },
+        onPanEnd: (_) => st.endDrag(),
         child: CustomPaint(
             size: Size(boardSize, boardSize), painter: BoardPainter(st)),
       ),
@@ -241,12 +213,12 @@ class _GameScreenState extends State<GameScreen>
                     color: kAccent.withOpacity(0.12),
                     border: Border.all(color: kAccent, width: 2),
                   ),
-                  child: const Icon(Icons.all_inclusive_rounded,
+                  child: const Icon(Icons.hub_rounded,
                       color: kAccent, size: 28),
                 ),
                 const SizedBox(height: 16),
-                Text('PEARLS THREADED',
-                    style: techno(15,
+                Text('ALL CONNECTED',
+                    style: techno(16,
                         color: kAccent,
                         weight: FontWeight.w900,
                         letterSpacing: 3)),
@@ -304,7 +276,7 @@ class _GameScreenState extends State<GameScreen>
           decoration: BoxDecoration(
             gradient: primary
                 ? const LinearGradient(
-                    colors: [Color(0xFF2E9E86), Color(0xFF4FD6B8)])
+                    colors: [Color(0xFF2E8FB8), Color(0xFF5AD1FF)])
                 : null,
             color: primary ? null : kBg,
             borderRadius: BorderRadius.circular(10),

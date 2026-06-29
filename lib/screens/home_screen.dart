@@ -17,12 +17,12 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(children: [
           const Spacer(flex: 2),
-          Icon(Icons.blur_circular_rounded, color: kAccent, size: 82),
+          Icon(Icons.timeline_rounded, color: kAccent, size: 84),
           const SizedBox(height: 18),
-          Text('LOOP PEARLS',
+          Text('LINKORO',
               style: techno(40, color: kAccent, weight: FontWeight.w900, letterSpacing: 6)),
           const SizedBox(height: 8),
-          Text('WHITE STRAIGHT · BLACK TURNS', style: techno(11, color: kTextDim, letterSpacing: 4)),
+          Text('CONNECT · FILL · FLOW', style: techno(11, color: kTextDim, letterSpacing: 4)),
           const SizedBox(height: 28),
           Row(mainAxisAlignment: MainAxisAlignment.center, children: [
             _chip(Icons.check_circle_outline, '$completed / $kTotalLevels', kEasyColor),
@@ -68,7 +68,7 @@ class HomeScreen extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 16),
           decoration: BoxDecoration(
             gradient: primary
-                ? const LinearGradient(colors: [Color(0xFF2E9E86), Color(0xFF4FD6B8)])
+                ? const LinearGradient(colors: [Color(0xFF2E8FB8), Color(0xFF5AD1FF)])
                 : null,
             color: primary ? null : kSurface,
             borderRadius: BorderRadius.circular(12),

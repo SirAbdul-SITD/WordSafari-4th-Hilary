@@ -15,30 +15,30 @@ void main() async {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
     statusBarIconBrightness: Brightness.light,
-    systemNavigationBarColor: Color(0xFF0F1518),
+    systemNavigationBarColor: Color(0xFF0D1017),
     systemNavigationBarIconBrightness: Brightness.light,
   ));
   await Preferences.instance.init();
   await AudioManager.instance.init();
-  runApp(const LoopPearlsApp());
+  runApp(const LinkoroApp());
 }
 
-class LoopPearlsApp extends StatelessWidget {
-  const LoopPearlsApp({super.key});
+class LinkoroApp extends StatelessWidget {
+  const LinkoroApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => GameState(),
       child: MaterialApp(
-        title: 'Loop Pearls',
+        title: 'Linkoro',
         debugShowCheckedModeBanner: false,
         navigatorObservers: [routeObserver],
         theme: ThemeData.dark().copyWith(
-          scaffoldBackgroundColor: const Color(0xFF0F1518),
+          scaffoldBackgroundColor: const Color(0xFF0D1017),
           colorScheme: const ColorScheme.dark(
-            primary: Color(0xFF4FD6B8),
-            surface: Color(0xFF182227),
+            primary: Color(0xFF5AD1FF),
+            surface: Color(0xFF161B26),
           ),
         ),
         home: const HomeScreen(),

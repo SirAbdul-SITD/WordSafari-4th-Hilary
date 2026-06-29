@@ -1,40 +1,40 @@
 ═══════════════════════════════════════════
-LOOP PEARLS — PLAY STORE LISTING
-com.lushy.looppearls
+LINKORO — PLAY STORE LISTING
+com.lushy.linkoro
 ═══════════════════════════════════════════
 
 APP TITLE (max 50 chars):
-Loop Pearls: Masyu Logic
+Linkoro: Number Link Flow
 
 SHORT DESCRIPTION (max 80 chars):
-Draw one loop: straight through white pearls, turning on black. 150 puzzles!
+Connect matching numbers with paths that fill the whole grid! 150 levels.
 
 FULL DESCRIPTION:
-⚪ WHITE STRAIGHT. BLACK TURNS. ⚫
+🔗 CONNECT. FILL. FLOW. 🔗
 
-Thread a single closed loop through the grid that obeys the pearls. At a white pearl the loop runs straight through but must bend just before or after. At a black pearl the loop must turn — and run straight on both sides. Read the pearls and find the one loop that satisfies them all.
+Link each pair of matching numbers with a colored path. The paths can't cross — and together they must fill every single cell. Find the one arrangement where everything connects and nothing is left empty.
 
-🔄 HOW TO PLAY
-• Tap between two cells to draw a loop segment
-• Tap again to cross it out, once more to clear
-• White pearl: go straight through, turn in a neighbor cell
-• Black pearl: turn here, go straight on both sides
-• Form one single closed loop to win
+🎯 HOW TO PLAY
+• Drag from a number to its matching twin
+• Paths can't cross or overlap
+• Cover every cell to complete the puzzle
+• Drag over an existing path to redraw it
 
 ✨ FEATURES
-• 150 levels: 6×6, 8×8 and 10×10 grids
-• Every puzzle is built from a real loop — always solvable
-• Elegant white and black pearl tokens
-• Glowing jade loop on an ink-wash board
-• Calming soundtrack and haptic feedback
+• 150 levels: 5×5, 6×6 and 7×7 grids
+• Every puzzle is carved from real filling paths — always solvable
+• Smooth color-coded flow drawing
+• Live linked/filled progress counter
+• Crisp neon-on-slate visuals and a smooth soundtrack
+• Haptic feedback
 • 100% offline, no ads, no purchases, zero data collection
 
-🧠 THE MASYU CLASSIC
-Also known as Masyu or "Pearl Necklace" — one of the most elegant loop puzzles ever designed. Two pearl rules, one loop, endless satisfying deduction.
+🧠 THE NUMBERLINK CLASSIC
+Also known as Numberlink, Flow, or Arukone — a beloved connect-the-pairs puzzle. The twist: every cell must be used, so there's exactly one elegant way to weave them all.
 
-Thread the pearls. Close the loop. ⚪⚫
+Connect the pairs. Fill the flow. 🔗
 
 CATEGORY: Games > Puzzle
 CONTENT RATING: Everyone
 PRICE: Free
-TAGS: masyu, loop, pearls, logic, puzzle, deduction, lines, brain, japanese, nikoli
+TAGS: numberlink, flow, connect, path, link, puzzle, logic, brain, pipes, arukone

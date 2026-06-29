@@ -1,5 +1,5 @@
-name: looppearls
-description: Loop Pearls - Draw one loop obeying the white and black pearls.
+name: linkoro
+description: Linkoro - Connect matching numbers with paths that fill the grid.
 publish_to: 'none'
 version: 1.0.0+1
 

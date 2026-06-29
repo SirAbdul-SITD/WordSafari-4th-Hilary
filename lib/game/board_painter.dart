@@ -11,77 +11,73 @@ class BoardPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final n = st.n;
     final cell = size.width / n;
-    Offset ctr(int i) =>
-        Offset((i % n) * cell + cell / 2, (i ~/ n) * cell + cell / 2);
 
-    // faint grid
-    final gl = Paint()
-      ..color = kBorder.withOpacity(0.4)
-      ..strokeWidth = 1;
-    for (int i = 0; i <= n; i++) {
-      canvas.drawLine(Offset(i * cell, 0), Offset(i * cell, size.height), gl);
-      canvas.drawLine(Offset(0, i * cell), Offset(size.width, i * cell), gl);
-    }
-
-    // crossed edges
-    st.edges.forEach((k, state) {
-      if (state != 2) return;
-      final p = k.split('-');
-      final mid = (ctr(int.parse(p[0])) + ctr(int.parse(p[1]))) / 2;
-      final cross = Paint()
-        ..color = kCross
-        ..strokeWidth = 2;
-      const s = 5.0;
-      canvas.drawLine(mid + const Offset(-s, -s), mid + const Offset(s, s), cross);
-      canvas.drawLine(mid + const Offset(s, -s), mid + const Offset(-s, s), cross);
-    });
-
-    // drawn loop
-    final glow = Paint()
-      ..color = kLine.withOpacity(0.4)
-      ..strokeWidth = cell * 0.18
-      ..strokeCap = StrokeCap.round
-      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 4);
-    final line = Paint()
-      ..color = kLine
-      ..strokeWidth = cell * 0.08
-      ..strokeCap = StrokeCap.round;
-    st.edges.forEach((k, state) {
-      if (state != 1) return;
-      final p = k.split('-');
-      final a = ctr(int.parse(p[0])), b = ctr(int.parse(p[1]));
-      canvas.drawLine(a, b, glow);
-      canvas.drawLine(a, b, line);
-    });
-
-    // center dots
+    // cells
     for (int i = 0; i < n * n; i++) {
-      canvas.drawCircle(ctr(i), cell * 0.04, Paint()..color = kDot);
+      final r = i ~/ n, c = i % n;
+      final rect = Rect.fromLTWH(c * cell + 1.5, r * cell + 1.5,
+          cell - 3, cell - 3);
+      canvas.drawRRect(
+          RRect.fromRectAndRadius(rect, const Radius.circular(5)),
+          Paint()..color = kCell);
+      canvas.drawRRect(
+          RRect.fromRectAndRadius(rect, const Radius.circular(5)),
+          Paint()
+            ..color = kCellEdge
+            ..style = PaintingStyle.stroke
+            ..strokeWidth = 1);
     }
 
-    // pearls
-    final radius = cell * 0.30;
-    st.level.pearls.forEach((cell, kind) {
-      final c = ctr(cell);
-      if (kind == 1) {
-        canvas.drawCircle(c, radius, Paint()..color = kPearlWhite);
-        canvas.drawCircle(
-            c,
-            radius,
-            Paint()
-              ..color = kPearlWhiteE
-              ..style = PaintingStyle.stroke
-              ..strokeWidth = 2.5);
-      } else {
-        canvas.drawCircle(c, radius, Paint()..color = kPearlBlack);
-        canvas.drawCircle(
-            c,
-            radius,
-            Paint()
-              ..color = kPearlBlackE
-              ..style = PaintingStyle.stroke
-              ..strokeWidth = 2.5);
+    // paths (thick rounded lines per pair)
+    st.paths.forEach((pid, path) {
+      if (path.length < 2) return;
+      final color = kPairColors[pid % kPairColors.length];
+      Offset ctr(int i) =>
+          Offset((i % n) * cell + cell / 2, (i ~/ n) * cell + cell / 2);
+      final p = Path()..moveTo(ctr(path.first).dx, ctr(path.first).dy);
+      for (int k = 1; k < path.length; k++) {
+        p.lineTo(ctr(path[k]).dx, ctr(path[k]).dy);
       }
+      canvas.drawPath(
+          p,
+          Paint()
+            ..color = color
+            ..style = PaintingStyle.stroke
+            ..strokeWidth = cell * 0.32
+            ..strokeCap = StrokeCap.round
+            ..strokeJoin = StrokeJoin.round);
+    });
+
+    // endpoints (filled dots with pair number)
+    st.level.endpoints.forEach((cellIdx, pid) {
+      final r = cellIdx ~/ n, c = cellIdx % n;
+      final center = Offset(c * cell + cell / 2, r * cell + cell / 2);
+      final color = kPairColors[pid % kPairColors.length];
+      final linked = st.pairLinked(pid);
+      if (linked) {
+        canvas.drawCircle(
+            center,
+            cell * 0.38,
+            Paint()
+              ..color = color.withOpacity(0.4)
+              ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 5));
+      }
+      canvas.drawCircle(center, cell * 0.30, Paint()..color = color);
+      canvas.drawCircle(center, cell * 0.30,
+          Paint()
+            ..color = Colors.black.withOpacity(0.25)
+            ..style = PaintingStyle.stroke
+            ..strokeWidth = 2);
+      final tp = TextPainter(
+        text: TextSpan(
+            text: '${pid + 1}',
+            style: TextStyle(
+                color: Colors.black.withOpacity(0.7),
+                fontSize: cell * 0.30,
+                fontWeight: FontWeight.w900)),
+        textDirection: TextDirection.ltr,
+      )..layout();
+      tp.paint(canvas, center - Offset(tp.width / 2, tp.height / 2));
     });
   }
 

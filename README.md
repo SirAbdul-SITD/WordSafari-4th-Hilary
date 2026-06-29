@@ -1,6 +1,6 @@
-# Loop Pearls — Masyu Logic
+# Linkoro — Number Link Flow (Numberlink)
 
-Draw a single closed loop that passes straight through white pearls (with a turn beside them) and turns on black pearls (going straight on both sides). 150 levels (6×6 / 8×8 / 10×10).
+Connect each pair of matching numbers with non-crossing paths that fill every cell. 150 levels (5×5 / 6×6 / 7×7).
 
 ## Run
 ```
@@ -9,14 +9,14 @@ flutter run
 ```
 
 ## Guaranteed-solvable generation
-A Hamiltonian cycle is built on an even-sized grid (a grid Hamiltonian cycle requires at least one even side, so even boards are used). Each loop vertex is classified, and white/black pearls are placed only where the loop already satisfies that pearl's rule. The loop is therefore a valid solution. Validated: 240/240 even boards.
+Disjoint self-avoiding walks are carved until they fill the whole grid; any single-cell path is merged into a neighbor's endpoint. Each path's two ends become a numbered pair. Because the carve fills the grid, a complete solution exists. Validated: 240/240 boards, ~2 tries max.
 
 ## Structure
-- `lib/game/masyu_level.dart` — even-n Hamiltonian cycle, pearl classification, `solutionEdges()`
-- `lib/game/game_state.dart` — tap edges (draw/cross/clear), win when drawn edges == solution loop
-- `lib/game/board_painter.dart` — glowing jade loop, white/black pearl tokens, crossed-edge marks
-- `lib/screens/` — home, level select, game (with pearl legend), settings
-- `assets/music|sounds/` — ambient tracks + draw/complete SFX
+- `lib/game/link_level.dart` — path-carving generator with single-cell merge, endpoint map
+- `lib/game/game_state.dart` — drag to trace pair paths, overwrite-on-cross, win when all cells filled and every pair linked
+- `lib/game/board_painter.dart` — thick rounded color paths, numbered endpoint dots
+- `lib/screens/` — home, level select, game, settings
+- `assets/music|sounds/` — ambient tracks + link/complete SFX
 - `store/` — icon, feature graphic, listing, privacy policy
 
 ## Notes
