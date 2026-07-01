@@ -7,13 +7,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:linkoro/main.dart';
+import 'package:wordsafari/main.dart';
 
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const LinkoroApp());
+    await tester.pumpWidget(const WordSafariApp());
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);

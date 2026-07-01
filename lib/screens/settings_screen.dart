@@ -1,11 +1,12 @@
 // lib/screens/settings_screen.dart
 import 'package:flutter/material.dart';
-import '../utils/constants.dart';
-import '../utils/preferences.dart';
-import '../utils/audio_manager.dart';
+import '../theme/app_theme.dart';
+import '../utils/storage_service.dart';
+import '../utils/audio_service.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
+
   @override
   State<SettingsScreen> createState() => _SettingsScreenState();
 }
@@ -13,91 +14,199 @@ class SettingsScreen extends StatefulWidget {
 class _SettingsScreenState extends State<SettingsScreen> {
   late bool _sound;
   late bool _music;
-  late bool _vibration;
 
   @override
   void initState() {
     super.initState();
-    _sound = Preferences.instance.isSoundEnabled();
-    _music = Preferences.instance.isMusicEnabled();
-    _vibration = Preferences.instance.isVibrationEnabled();
+    _sound = StorageService.getSoundEnabled();
+    _music = StorageService.getMusicEnabled();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kBg,
-      appBar: AppBar(
-        backgroundColor: kBg,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new_rounded, color: kTextDim),
-          onPressed: () => Navigator.of(context).pop(),
+      body: Container(
+        decoration: const BoxDecoration(gradient: AppTheme.bgGradient),
+        child: SafeArea(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(16),
+                child: Row(
+                  children: [
+                    GestureDetector(
+                      onTap: () => Navigator.pop(context),
+                      child: Container(
+                        width: 42, height: 42,
+                        decoration: BoxDecoration(
+                          color: AppTheme.primary.withOpacity(0.1),
+                          borderRadius: BorderRadius.circular(14),
+                        ),
+                        child: const Icon(Icons.arrow_back_rounded,
+                            color: AppTheme.primary),
+                      ),
+                    ),
+                    const SizedBox(width: 16),
+                    const Text(
+                      'Settings',
+                      style: TextStyle(
+                        fontFamily: 'Fredoka',
+                        fontSize: 26,
+                        fontWeight: FontWeight.w700,
+                        color: AppTheme.textDark,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(20),
+                child: Column(
+                  children: [
+                    _ToggleCard(
+                      icon: '🔊',
+                      title: 'Sound Effects',
+                      subtitle: 'Tap sounds, correct/wrong feedback',
+                      value: _sound,
+                      onChanged: (v) {
+                        setState(() => _sound = v);
+                        StorageService.setSoundEnabled(v);
+                      },
+                    ),
+                    const SizedBox(height: 12),
+                    _ToggleCard(
+                      icon: '🎵',
+                      title: 'Background Music',
+                      subtitle: 'Ambient game music',
+                      value: _music,
+                      onChanged: (v) {
+                        setState(() => _music = v);
+                        StorageService.setMusicEnabled(v);
+                        if (v) {
+                          AudioService.startMusic();
+                        } else {
+                          AudioService.stopMusic();
+                        }
+                      },
+                    ),
+                    const SizedBox(height: 24),
+                    _InfoCard(
+                      icon: '🪙',
+                      title: 'Your Coins',
+                      value: StorageService.getCoins().toString(),
+                    ),
+                    const SizedBox(height: 12),
+                    _InfoCard(
+                      icon: '⭐',
+                      title: 'Total Stars',
+                      value: StorageService.getTotalStars().toString(),
+                    ),
+                    const SizedBox(height: 24),
+                    // Version
+                    Text(
+                      'WordSafari v1.0.0',
+                      style: TextStyle(
+                        fontFamily: 'Nunito',
+                        fontSize: 13,
+                        color: AppTheme.textLight,
+                      ),
+                    ),
+                    Text(
+                      'com.hilaryapps.wordsafari',
+                      style: TextStyle(
+                        fontFamily: 'Nunito',
+                        fontSize: 12,
+                        color: AppTheme.textLight,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
-        title: Text('SETTINGS', style: techno(16, letterSpacing: 4)),
-        centerTitle: true,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(24),
-        child: Column(children: [
-          _toggle(Icons.volume_up_rounded, 'SOUND EFFECTS', _sound, (v) async {
-            setState(() => _sound = v);
-            await Preferences.instance.setSoundEnabled(v);
-          }),
-          const SizedBox(height: 12),
-          _toggle(Icons.music_note_rounded, 'MUSIC', _music, (v) async {
-            setState(() => _music = v);
-            await Preferences.instance.setMusicEnabled(v);
-            if (v) {
-              AudioManager.instance.startMusic();
-            } else {
-              AudioManager.instance.stopMusic();
-            }
-          }),
-          const SizedBox(height: 12),
-          _toggle(Icons.vibration_rounded, 'HAPTIC FEEDBACK', _vibration,
-              (v) async {
-            setState(() => _vibration = v);
-            await Preferences.instance.setVibrationEnabled(v);
-          }),
-          const SizedBox(height: 36),
-          Divider(color: kBorder.withOpacity(0.5)),
-          const SizedBox(height: 24),
-          Text('LINKORO', style: techno(13, color: kAccent, letterSpacing: 4)),
-          const SizedBox(height: 6),
-          Text('v1.0  ·  150 Levels',
-              style: techno(10,
-                  color: kTextDim.withOpacity(0.5), letterSpacing: 2)),
-        ]),
       ),
     );
   }
+}
 
-  Widget _toggle(
-          IconData icon, String label, bool value, ValueChanged<bool> onCh) =>
-      Container(
-        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
-        decoration: BoxDecoration(
-          color: kSurface,
-          borderRadius: BorderRadius.circular(12),
-          border:
-              Border.all(color: value ? kAccent.withOpacity(0.4) : kBorder),
-        ),
-        child: Row(children: [
-          Icon(icon, color: value ? kAccent : kTextDim, size: 20),
-          const SizedBox(width: 14),
-          Text(label,
-              style: techno(12,
-                  color: value ? Colors.white : kTextDim, letterSpacing: 2)),
-          const Spacer(),
-          Switch.adaptive(
-            value: value,
-            onChanged: onCh,
-            activeColor: kAccent,
-            activeTrackColor: kAccent.withOpacity(0.3),
-            inactiveThumbColor: kTextDim,
-            inactiveTrackColor: kBorder,
+class _ToggleCard extends StatelessWidget {
+  final String icon;
+  final String title;
+  final String subtitle;
+  final bool value;
+  final ValueChanged<bool> onChanged;
+
+  const _ToggleCard({
+    required this.icon,
+    required this.title,
+    required this.subtitle,
+    required this.value,
+    required this.onChanged,
+  });
+
+  @override
+  Widget build(BuildContext context) => Container(
+    padding: const EdgeInsets.all(16),
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(16),
+      boxShadow: AppTheme.cardShadow,
+    ),
+    child: Row(
+      children: [
+        Text(icon, style: const TextStyle(fontSize: 28)),
+        const SizedBox(width: 14),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(title, style: AppTheme.bodyLarge),
+              Text(subtitle, style: AppTheme.bodyMedium),
+            ],
           ),
-        ]),
-      );
+        ),
+        Switch(
+          value: value,
+          onChanged: onChanged,
+          activeColor: AppTheme.primary,
+        ),
+      ],
+    ),
+  );
+}
+
+class _InfoCard extends StatelessWidget {
+  final String icon;
+  final String title;
+  final String value;
+
+  const _InfoCard({required this.icon, required this.title, required this.value});
+
+  @override
+  Widget build(BuildContext context) => Container(
+    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(16),
+      boxShadow: AppTheme.cardShadow,
+    ),
+    child: Row(
+      children: [
+        Text(icon, style: const TextStyle(fontSize: 24)),
+        const SizedBox(width: 14),
+        Text(title, style: AppTheme.bodyLarge),
+        const Spacer(),
+        Text(
+          value,
+          style: const TextStyle(
+            fontFamily: 'Fredoka',
+            fontSize: 22,
+            fontWeight: FontWeight.w700,
+            color: AppTheme.primary,
+          ),
+        ),
+      ],
+    ),
+  );
 }

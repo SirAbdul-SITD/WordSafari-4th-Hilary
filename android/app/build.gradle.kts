@@ -21,7 +21,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.lushy.linkoro"
+        applicationId = "com.hilaryapps.wordsafari"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion
@@ -33,9 +33,9 @@ android {
     signingConfigs {
         create("release") {
             storeFile = file("key.jks")
-            storePassword = "linkoro"
-            keyAlias = "linkoro"
-            keyPassword = "linkoro"
+            storePassword = "wordsafari"
+            keyAlias = "wordsafari"
+            keyPassword = "wordsafari"
         }
     }
 

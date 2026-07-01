@@ -1,154 +1,138 @@
 // lib/screens/level_select_screen.dart
 import 'package:flutter/material.dart';
-import '../main.dart' show routeObserver;
-import '../utils/constants.dart';
-import '../utils/preferences.dart';
+import 'package:provider/provider.dart';
+import '../models/game_provider.dart';
+import '../theme/app_theme.dart';
+import '../utils/storage_service.dart';
 import 'game_screen.dart';
 
-class LevelSelectScreen extends StatefulWidget {
-  const LevelSelectScreen({super.key});
-  @override
-  State<LevelSelectScreen> createState() => _LevelSelectScreenState();
-}
+class LevelSelectScreen extends StatelessWidget {
+  final String category;
+  final Color color;
 
-class _LevelSelectScreenState extends State<LevelSelectScreen> with RouteAware {
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    routeObserver.subscribe(this, ModalRoute.of(context)! as PageRoute);
-  }
-
-  @override
-  void dispose() {
-    routeObserver.unsubscribe(this);
-    super.dispose();
-  }
-
-  @override
-  void didPopNext() => setState(() {});
+  const LevelSelectScreen({
+    super.key,
+    required this.category,
+    required this.color,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kBg,
-      body: CustomScrollView(slivers: [
-        SliverAppBar(
-          backgroundColor: kBg,
-          pinned: true,
-          elevation: 0,
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back_ios_new_rounded, color: kTextDim),
-            onPressed: () => Navigator.of(context).pop(),
-          ),
-          title: Text('SELECT LEVEL', style: techno(16, letterSpacing: 4)),
-          centerTitle: true,
-        ),
-        SliverList(
-          delegate: SliverChildListDelegate([
-            _section('EASY', kEasyColor, 0, 49, '5×5'),
-            _section('MEDIUM', kMediumColor, 50, 99, '6×6'),
-            _section('HARD', kHardColor, 100, 149, '7×7'),
-            const SizedBox(height: 32),
-          ]),
-        ),
-      ]),
-    );
-  }
+      body: Container(
+        decoration: const BoxDecoration(gradient: AppTheme.bgGradient),
+        child: SafeArea(
+          child: Column(
+            children: [
+              // Header
+              Container(
+                padding: const EdgeInsets.all(16),
+                child: Row(
+                  children: [
+                    GestureDetector(
+                      onTap: () => Navigator.pop(context),
+                      child: Container(
+                        width: 42, height: 42,
+                        decoration: BoxDecoration(
+                          color: color.withOpacity(0.15),
+                          borderRadius: BorderRadius.circular(14),
+                        ),
+                        child: Icon(Icons.arrow_back_rounded, color: color),
+                      ),
+                    ),
+                    const SizedBox(width: 16),
+                    Text(
+                      category,
+                      style: const TextStyle(
+                        fontFamily: 'Fredoka',
+                        fontSize: 26,
+                        fontWeight: FontWeight.w700,
+                        color: AppTheme.textDark,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              // Level grid
+              Expanded(
+                child: GridView.builder(
+                  padding: const EdgeInsets.all(20),
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 3,
+                    crossAxisSpacing: 14,
+                    mainAxisSpacing: 14,
+                    childAspectRatio: 0.9,
+                  ),
+                  itemCount: 10,
+                  itemBuilder: (context, i) {
+                    final level = i + 1;
+                    final progress = StorageService.getLevelProgress(category, level);
+                    final isUnlocked = progress.isUnlocked;
+                    final stars = progress.stars;
 
-  Widget _section(String label, Color color, int start, int end, String grid) {
-    final count = end - start + 1;
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(16, 20, 16, 8),
-      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Row(children: [
-          Container(
-              width: 4,
-              height: 20,
-              decoration: BoxDecoration(
-                  color: color, borderRadius: BorderRadius.circular(2))),
-          const SizedBox(width: 10),
-          Text(label, style: techno(14, color: color, letterSpacing: 4)),
-          const SizedBox(width: 10),
-          Text(grid,
-              style: techno(11,
-                  color: kTextDim.withOpacity(0.6), letterSpacing: 2)),
-        ]),
-        const SizedBox(height: 14),
-        GridView.builder(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 5,
-            mainAxisSpacing: 8,
-            crossAxisSpacing: 8,
-            childAspectRatio: 0.9,
-          ),
-          itemCount: count,
-          itemBuilder: (ctx, i) => _LevelButton(
-            levelIndex: start + i,
-            accentColor: color,
+                    return GestureDetector(
+                      onTap: isUnlocked
+                          ? () => _startLevel(context, level)
+                          : null,
+                      child: AnimatedContainer(
+                        duration: const Duration(milliseconds: 200),
+                        decoration: BoxDecoration(
+                          color: isUnlocked ? Colors.white : AppTheme.textLight.withOpacity(0.2),
+                          borderRadius: BorderRadius.circular(20),
+                          boxShadow: isUnlocked ? AppTheme.cardShadow : [],
+                          border: Border.all(
+                            color: isUnlocked
+                                ? (stars > 0 ? color : color.withOpacity(0.3))
+                                : Colors.transparent,
+                            width: stars > 0 ? 2.5 : 1.5,
+                          ),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            if (!isUnlocked)
+                              Icon(Icons.lock_rounded,
+                                  color: AppTheme.textLight, size: 28)
+                            else ...[
+                              Text(
+                                level.toString(),
+                                style: TextStyle(
+                                  fontFamily: 'Fredoka',
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.w700,
+                                  color: stars > 0 ? color : AppTheme.textDark,
+                                ),
+                              ),
+                              const SizedBox(height: 6),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: List.generate(3, (si) => Icon(
+                                  si < stars
+                                      ? Icons.star_rounded
+                                      : Icons.star_border_rounded,
+                                  color: AppTheme.accent,
+                                  size: 16,
+                                )),
+                              ),
+                            ],
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ],
           ),
         ),
-      ]),
-    );
-  }
-}
-
-class _LevelButton extends StatelessWidget {
-  final int levelIndex;
-  final Color accentColor;
-  const _LevelButton({required this.levelIndex, required this.accentColor});
-
-  @override
-  Widget build(BuildContext context) {
-    final maxUnlocked = Preferences.instance.getMaxUnlocked();
-    final stars = Preferences.instance.getLevelStars(levelIndex);
-    final unlocked = levelIndex <= maxUnlocked;
-    final completed = stars > 0;
-
-    return GestureDetector(
-      onTap: unlocked
-          ? () => Navigator.of(context).push(MaterialPageRoute(
-              builder: (_) => GameScreen(levelIndex: levelIndex)))
-          : null,
-      child: Container(
-        decoration: BoxDecoration(
-          color: kSurface,
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(
-            color: completed
-                ? accentColor.withOpacity(0.6)
-                : unlocked
-                    ? kBorder
-                    : kBorder.withOpacity(0.3),
-          ),
-          boxShadow: completed
-              ? [BoxShadow(color: accentColor.withOpacity(0.18), blurRadius: 10)]
-              : null,
-        ),
-        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Text('${levelIndex + 1}',
-              style: techno(15,
-                  color: unlocked ? Colors.white : kTextDim.withOpacity(0.3))),
-          const SizedBox(height: 5),
-          if (!unlocked)
-            Icon(Icons.lock_outline,
-                color: kTextDim.withOpacity(0.22), size: 14)
-          else
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: List.generate(
-                  3,
-                  (i) => Icon(
-                        i < stars
-                            ? Icons.star_rounded
-                            : Icons.star_outline_rounded,
-                        color: i < stars ? kStarOn : kStarOff,
-                        size: 11,
-                      )),
-            ),
-        ]),
       ),
     );
+  }
+
+  void _startLevel(BuildContext context, int level) {
+    final game = context.read<GameProvider>();
+    game.startClassicLevel(category, level);
+    Navigator.push(context,
+        MaterialPageRoute(builder: (_) => const GameScreen()));
   }
 }

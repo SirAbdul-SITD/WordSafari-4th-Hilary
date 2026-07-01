@@ -1,295 +1,387 @@
 // lib/screens/game_screen.dart
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import '../game/game_state.dart';
-import '../game/board_painter.dart';
-import '../utils/constants.dart';
-import '../utils/preferences.dart';
-import 'level_select_screen.dart';
+import 'package:confetti/confetti.dart';
+import '../models/game_provider.dart';
+import '../models/game_models.dart';
+import '../theme/app_theme.dart';
+import '../widgets/letter_tile_widget.dart';
+import '../widgets/game_hud.dart';
+import '../widgets/control_row.dart';
+import 'level_complete_screen.dart';
+import 'game_over_screen.dart';
+import 'pause_screen.dart';
 
 class GameScreen extends StatefulWidget {
-  final int levelIndex;
-  const GameScreen({super.key, required this.levelIndex});
+  const GameScreen({super.key});
+
   @override
   State<GameScreen> createState() => _GameScreenState();
 }
 
 class _GameScreenState extends State<GameScreen>
-    with SingleTickerProviderStateMixin {
-  late final AnimationController _vc;
-  late final Animation<double> _va;
+    with TickerProviderStateMixin {
+  late ConfettiController _confetti;
+  late AnimationController _shakeCtrl;
+  late Animation<double> _shakeAnim;
+  late AnimationController _popCtrl;
+  late Animation<double> _popAnim;
 
   @override
   void initState() {
     super.initState();
-    _vc = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 600));
-    _va = CurvedAnimation(parent: _vc, curve: Curves.elasticOut);
-    WidgetsBinding.instance.addPostFrameCallback(
-        (_) => context.read<GameState>().loadLevel(widget.levelIndex));
+    _confetti = ConfettiController(duration: const Duration(seconds: 2));
+
+    _shakeCtrl = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 500),
+    );
+    _shakeAnim = Tween<double>(begin: 0, end: 1).animate(
+      CurvedAnimation(parent: _shakeCtrl, curve: Curves.elasticIn),
+    );
+
+    _popCtrl = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 400),
+    );
+    _popAnim = Tween<double>(begin: 0, end: 1).animate(
+      CurvedAnimation(parent: _popCtrl, curve: Curves.elasticOut),
+    );
   }
 
   @override
   void dispose() {
-    _vc.dispose();
+    _confetti.dispose();
+    _shakeCtrl.dispose();
+    _popCtrl.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: kBg,
-      body: Consumer<GameState>(builder: (ctx, st, _) {
-        if (!st.initialized) {
-          return const Center(child: CircularProgressIndicator(color: kAccent));
-        }
-        if (st.isComplete && !_vc.isCompleted) {
-          _vc.forward();
-          if (Preferences.instance.isVibrationEnabled()) {
-            HapticFeedback.heavyImpact();
-          }
-        }
-        final total = st.n * st.n;
-        return Stack(children: [
-          SafeArea(
-            child: Column(children: [
-              _hud(st),
-              const SizedBox(height: 4),
-              Text(
-                  '${st.linkedCount}/${st.level.pairCount} LINKED · ${st.filledCount}/$total FILLED',
-                  style: techno(11, color: kTextDim, letterSpacing: 1.5)),
-              Expanded(child: Center(child: _board(st))),
-              Text('DRAG FROM A NUMBER TO ITS TWIN · FILL EVERY CELL',
-                  style: techno(9, color: kTextDim, letterSpacing: 1.2)),
-              const SizedBox(height: 10),
-              _bottomBar(st),
-              const SizedBox(height: 12),
-            ]),
-          ),
-          if (st.isComplete) _victory(st),
-        ]);
-      }),
-    );
-  }
+    final game = context.watch<GameProvider>();
 
-  Widget _hud(GameState st) {
-    final dc = st.level.difficulty == 'Easy'
-        ? kEasyColor
-        : st.level.difficulty == 'Medium'
-            ? kMediumColor
-            : kHardColor;
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      child: Row(children: [
-        GestureDetector(
-          onTap: () => Navigator.of(context).pop(),
-          child: Container(
-            padding: const EdgeInsets.all(8),
-            decoration: BoxDecoration(
-                color: kSurface,
-                borderRadius: BorderRadius.circular(8),
-                border: Border.all(color: kBorder)),
-            child: const Icon(Icons.arrow_back_ios_new_rounded,
-                color: kTextDim, size: 16),
+    // React to game phase
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (game.showCorrectAnim) {
+        _confetti.play();
+        _popCtrl.forward(from: 0);
+      }
+      if (game.showWrongAnim) {
+        _shakeCtrl.forward(from: 0);
+      }
+      if (game.phase == GamePhase.levelComplete) {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (_) => const LevelCompleteScreen()),
+        );
+      }
+      if (game.phase == GamePhase.gameOver) {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (_) => const GameOverScreen()),
+        );
+      }
+      if (game.phase == GamePhase.paused) {
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (_) => const PauseScreen()),
+        );
+      }
+    });
+
+    return Scaffold(
+      body: Container(
+        decoration: const BoxDecoration(gradient: AppTheme.bgGradient),
+        child: SafeArea(
+          child: Stack(
+            children: [
+              Column(
+                children: [
+                  const GameHud(),
+                  const SizedBox(height: 8),
+                  _buildCategoryBanner(game),
+                  const Spacer(),
+                  _buildWordDisplay(game),
+                  const SizedBox(height: 24),
+                  _buildAnswerRow(game),
+                  const SizedBox(height: 32),
+                  _buildScrambleRow(game),
+                  const SizedBox(height: 32),
+                  const ControlRow(),
+                  const Spacer(),
+                ],
+              ),
+              // Confetti
+              Align(
+                alignment: Alignment.topCenter,
+                child: ConfettiWidget(
+                  confettiController: _confetti,
+                  blastDirectionality: BlastDirectionality.explosive,
+                  numberOfParticles: 30,
+                  colors: const [
+                    AppTheme.primary, AppTheme.secondary, AppTheme.accent,
+                    AppTheme.purple, AppTheme.pink, AppTheme.green,
+                  ],
+                ),
+              ),
+              // Combo popup
+              if (game.showCombo)
+                _ComboPopup(label: game.comboLabel),
+              // Blast overlay
+              if (game.showBlastAnim)
+                _BlastOverlay(),
+            ],
           ),
         ),
-        const Spacer(),
-        Column(children: [
-          Text('LEVEL ${st.level.index + 1}',
-              style: techno(14, letterSpacing: 3)),
-          Text(st.level.difficulty.toUpperCase(),
-              style: techno(10, color: dc, letterSpacing: 2)),
-        ]),
-        const Spacer(),
-        Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
-          Text('${st.moves}',
-              style: techno(18, color: kAccent, weight: FontWeight.w900)),
-          Text('MOVES', style: techno(8, color: kTextDim, letterSpacing: 1.5)),
-        ]),
-      ]),
+      ),
     );
   }
 
-  Widget _board(GameState st) {
-    final size = MediaQuery.of(context).size;
-    final boardSize = (size.width - 28).clamp(0.0, size.height * 0.58);
-    final cell = boardSize / st.n;
+  Widget _buildCategoryBanner(GameProvider game) {
+    const emojis = {
+      'Animals': '🐾', 'Food': '🍕', 'Sports': '⚽', 'Science': '🔬',
+      'Countries': '🌍', 'Nature': '🌿', 'Technology': '💻', 'Emotions': '😊',
+      'Music': '🎵', 'Travel': '✈️', 'Movies': '🎬', 'Mythology': '⚡',
+      'Space': '🚀', 'History': '🏛️', 'Cooking': '👨‍🍳', 'Fashion': '👗',
+      'Art': '🎨', 'Body': '🫀', 'Weather': '🌤️',
+      'Sports Equipment': '🏋️', 'Professions': '👔',
+    };
+    final emoji = emojis[game.currentCategory] ?? '📝';
 
-    int? cellAt(Offset p) {
-      final c = (p.dx / cell).floor();
-      final r = (p.dy / cell).floor();
-      if (r < 0 || c < 0 || r >= st.n || c >= st.n) return null;
-      return r * st.n + c;
+    String modeLabel = '';
+    Color modeColor = AppTheme.primary;
+    if (game.mode == GameMode.chain) {
+      modeLabel = '⛓ CHAIN MODE';
+      modeColor = AppTheme.secondary;
+    } else if (game.mode == GameMode.blitz) {
+      modeLabel = '⚡ BLITZ MODE';
+      modeColor = AppTheme.purple;
+    } else {
+      modeLabel = '$emoji ${game.currentCategory} · Level ${game.currentLevel}';
     }
 
     return Container(
-      width: boardSize + 12,
-      height: boardSize + 12,
-      padding: const EdgeInsets.all(6),
+      margin: const EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       decoration: BoxDecoration(
-        color: kSurface.withOpacity(0.4),
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: kBorder, width: 1.5),
+        color: modeColor.withOpacity(0.1),
+        borderRadius: BorderRadius.circular(30),
+        border: Border.all(color: modeColor.withOpacity(0.3)),
       ),
-      child: GestureDetector(
-        onPanStart: (d) {
-          final i = cellAt(d.localPosition);
-          if (i == null) return;
-          if (Preferences.instance.isVibrationEnabled()) {
-            HapticFeedback.selectionClick();
-          }
-          st.beginAt(i);
-        },
-        onPanUpdate: (d) {
-          final i = cellAt(d.localPosition);
-          if (i != null) st.extendTo(i);
-        },
-        onPanEnd: (_) => st.endDrag(),
-        child: CustomPaint(
-            size: Size(boardSize, boardSize), painter: BoardPainter(st)),
+      child: Text(
+        modeLabel,
+        style: TextStyle(
+          fontFamily: 'Fredoka',
+          fontSize: 16,
+          color: modeColor,
+          fontWeight: FontWeight.w600,
+        ),
       ),
     );
   }
 
-  Widget _bottomBar(GameState st) => Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          _actionBtn(Icons.refresh_rounded, 'RESTART', () {
-            _vc.reset();
-            st.restartLevel();
-          }),
-          const SizedBox(width: 24),
-          _actionBtn(Icons.grid_view_rounded, 'LEVELS', () {
-            Navigator.of(context).pushReplacement(MaterialPageRoute(
-                builder: (_) => const LevelSelectScreen()));
-          }),
-        ],
-      );
+  Widget _buildWordDisplay(GameProvider game) {
+    // Show word length hint
+    final wordLen = game.currentWord.length;
 
-  Widget _actionBtn(IconData icon, String label, VoidCallback onTap) =>
-      GestureDetector(
-        onTap: onTap,
-        child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-          decoration: BoxDecoration(
-            color: kSurface,
-            borderRadius: BorderRadius.circular(10),
-            border: Border.all(color: kBorder),
-          ),
-          child: Row(mainAxisSize: MainAxisSize.min, children: [
-            Icon(icon, color: kTextDim, size: 16),
+    // Chain connector
+    Widget? chainHint;
+    if (game.mode == GameMode.chain && game.chainConnector.isNotEmpty) {
+      chainHint = Container(
+        margin: const EdgeInsets.only(bottom: 12),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Icon(Icons.link_rounded, color: AppTheme.secondary, size: 16),
             const SizedBox(width: 6),
-            Text(label, style: techno(10, color: kTextDim, letterSpacing: 2)),
-          ]),
+            Text(
+              'Must start with "${game.chainConnector.toUpperCase()}"',
+              style: const TextStyle(
+                fontFamily: 'Nunito',
+                fontSize: 14,
+                color: AppTheme.secondary,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+          ],
         ),
       );
+    }
 
-  Widget _victory(GameState st) => Container(
-        color: Colors.black.withOpacity(0.78),
-        child: Center(
-          child: ScaleTransition(
-            scale: _va,
+    return Column(
+      children: [
+        if (chainHint != null) chainHint,
+        Text(
+          '$wordLen letter word',
+          style: const TextStyle(
+            fontFamily: 'Nunito',
+            fontSize: 15,
+            color: AppTheme.textMedium,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildAnswerRow(GameProvider game) {
+    final size = _tileSize(game.currentWord.length, context);
+
+    return AnimatedBuilder(
+      animation: _shakeAnim,
+      builder: (context, child) {
+        final offset = game.showWrongAnim
+            ? (8 * (0.5 - (_shakeAnim.value % 0.25) / 0.25).abs())
+            : 0.0;
+        return Transform.translate(
+          offset: Offset(offset, 0),
+          child: child,
+        );
+      },
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Wrap(
+          spacing: 8,
+          runSpacing: 8,
+          alignment: WrapAlignment.center,
+          children: List.generate(game.currentWord.length, (i) {
+            return AnswerSlotWidget(
+              tile: game.answerSlots.length > i ? game.answerSlots[i] : null,
+              onTap: () => game.unselectTile(i),
+              size: size,
+              index: i,
+            );
+          }),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildScrambleRow(GameProvider game) {
+    final size = _tileSize(game.scrambledWord.length, context);
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Wrap(
+        spacing: 10,
+        runSpacing: 10,
+        alignment: WrapAlignment.center,
+        children: game.scrambledTiles.asMap().entries.map((e) {
+          return AnimatedBuilder(
+            animation: _popAnim,
+            builder: (ctx, child) {
+              return Transform.scale(
+                scale: game.showCorrectAnim
+                    ? (0.8 + 0.2 * _popAnim.value)
+                    : 1.0,
+                child: child,
+              );
+            },
+            child: LetterTileWidget(
+              tile: e.value,
+              onTap: () => game.tapTile(e.key),
+              size: size,
+            ),
+          );
+        }).toList(),
+      ),
+    );
+  }
+
+  double _tileSize(int wordLen, BuildContext context) {
+    final w = MediaQuery.of(context).size.width - 40;
+    final maxTileSize = 64.0;
+    final spacing = 10.0 * (wordLen - 1);
+    return ((w - spacing) / wordLen).clamp(40.0, maxTileSize);
+  }
+}
+
+// Combo popup overlay
+class _ComboPopup extends StatefulWidget {
+  final String label;
+  const _ComboPopup({required this.label});
+
+  @override
+  State<_ComboPopup> createState() => _ComboPopupState();
+}
+
+class _ComboPopupState extends State<_ComboPopup>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _ctrl;
+  late Animation<double> _scale;
+  late Animation<double> _opacity;
+
+  @override
+  void initState() {
+    super.initState();
+    _ctrl = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 600),
+    )..forward();
+    _scale = Tween<double>(begin: 0.3, end: 1.2).animate(
+      CurvedAnimation(parent: _ctrl, curve: Curves.elasticOut),
+    );
+    _opacity = Tween<double>(begin: 0, end: 1).animate(
+      CurvedAnimation(parent: _ctrl, curve: const Interval(0, 0.3)),
+    );
+  }
+
+  @override
+  void dispose() {
+    _ctrl.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: AnimatedBuilder(
+        animation: _ctrl,
+        builder: (_, __) => Opacity(
+          opacity: _opacity.value,
+          child: Transform.scale(
+            scale: _scale.value,
             child: Container(
-              margin: const EdgeInsets.symmetric(horizontal: 32),
-              padding: const EdgeInsets.all(28),
+              padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 14),
               decoration: BoxDecoration(
-                color: kSurface,
-                borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: kAccent.withOpacity(0.5), width: 1.5),
-                boxShadow: [
-                  BoxShadow(
-                      color: kAccent.withOpacity(0.2),
-                      blurRadius: 40,
-                      spreadRadius: 4)
-                ],
+                gradient: const LinearGradient(
+                  colors: [AppTheme.primary, AppTheme.pink],
+                ),
+                borderRadius: BorderRadius.circular(30),
+                boxShadow: AppTheme.buttonShadow(AppTheme.primary),
               ),
-              child: Column(mainAxisSize: MainAxisSize.min, children: [
-                Container(
-                  width: 60,
-                  height: 60,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: kAccent.withOpacity(0.12),
-                    border: Border.all(color: kAccent, width: 2),
-                  ),
-                  child: const Icon(Icons.hub_rounded,
-                      color: kAccent, size: 28),
+              child: Text(
+                widget.label,
+                style: const TextStyle(
+                  fontFamily: 'Fredoka',
+                  fontSize: 28,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white,
                 ),
-                const SizedBox(height: 16),
-                Text('ALL CONNECTED',
-                    style: techno(16,
-                        color: kAccent,
-                        weight: FontWeight.w900,
-                        letterSpacing: 3)),
-                const SizedBox(height: 6),
-                Text('${st.moves} MOVES',
-                    style: techno(11, color: kTextDim, letterSpacing: 2)),
-                const SizedBox(height: 20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: List.generate(
-                      3,
-                      (i) => Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 4),
-                            child: Icon(
-                              i < st.stars
-                                  ? Icons.star_rounded
-                                  : Icons.star_outline_rounded,
-                              color: i < st.stars ? kStarOn : kStarOff,
-                              size: 36,
-                            ),
-                          )),
-                ),
-                const SizedBox(height: 24),
-                Row(children: [
-                  Expanded(
-                      child: _vBtn('REPLAY', Icons.refresh_rounded, false, () {
-                    _vc.reset();
-                    st.restartLevel();
-                  })),
-                  const SizedBox(width: 10),
-                  Expanded(
-                      child: _vBtn('NEXT', Icons.arrow_forward_rounded, true,
-                          () {
-                    _vc.reset();
-                    if (st.currentLevelIndex < 149) {
-                      st.nextLevel();
-                    } else {
-                      Navigator.of(context).pushReplacement(MaterialPageRoute(
-                          builder: (_) => const LevelSelectScreen()));
-                    }
-                  })),
-                ]),
-              ]),
+              ),
             ),
           ),
         ),
-      );
+      ),
+    );
+  }
+}
 
-  Widget _vBtn(String label, IconData icon, bool primary, VoidCallback onTap) =>
-      GestureDetector(
-        onTap: onTap,
-        child: Container(
-          padding: const EdgeInsets.symmetric(vertical: 13),
-          decoration: BoxDecoration(
-            gradient: primary
-                ? const LinearGradient(
-                    colors: [Color(0xFF2E8FB8), Color(0xFF5AD1FF)])
-                : null,
-            color: primary ? null : kBg,
-            borderRadius: BorderRadius.circular(10),
-            border: Border.all(
-                color: primary ? kAccent.withOpacity(0.5) : kBorder),
+// Blast overlay
+class _BlastOverlay extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: AppTheme.accent.withOpacity(0.3),
+      child: const Center(
+        child: Text(
+          '💥 BLAST BONUS!',
+          style: TextStyle(
+            fontFamily: 'Fredoka',
+            fontSize: 36,
+            fontWeight: FontWeight.w700,
+            color: AppTheme.primary,
           ),
-          child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            Icon(icon, color: primary ? kBg : Colors.white, size: 16),
-            const SizedBox(width: 6),
-            Text(label,
-                style: techno(12,
-                    color: primary ? kBg : kTextPrimary, letterSpacing: 2)),
-          ]),
         ),
-      );
+      ),
+    );
+  }
 }
